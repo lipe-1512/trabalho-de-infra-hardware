@@ -12,5 +12,4 @@ assign data_out = (escolha == 4'b0000) ? zero:
                   (escolha == 4'b0110) ? seis:
                   (escolha == 4'b0111) ? sete:
                   oito;
-
 endmodule

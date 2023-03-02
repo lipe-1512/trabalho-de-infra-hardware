@@ -8,5 +8,4 @@ module mux_IorD (
                         (saida_IorD == 2'b10) ? dois:
                         (saida_IorD == 2'b11) ? tres:
                         quatro;
-    
 endmodule
