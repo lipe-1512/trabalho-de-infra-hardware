@@ -1,7 +1,7 @@
 module div(input wire clk, reset, divStart, input wire [31:0] A, B, output reg DivZero, output reg [31:0] Hi, Lo);
    
     reg seletor = 1'b0;
-    reg [5:0] nOfBits;
+    reg [5:0] nOfBits; // número de ciclos
 
     reg [31:0] divisor; // Sinal B
     reg [31:0] dividendo; // Sinal A
