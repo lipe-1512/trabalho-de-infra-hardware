@@ -22,12 +22,12 @@ module control_unit (
     output reg EPC_wr,  
     output reg [1:0] load_control,
     output reg [1:0] store_control,
-    output reg multStart,
-    output reg divStart,
-    output reg MultOrDivLow,
-    output reg MultOrDivHigh,
-    output reg LOWrite,
-    output reg HIWrite,
+    output reg mult_start,
+    output reg div_start,
+    output reg Mult_div_lo,
+    output reg Mult_div_hi,
+    output reg Lo_wr,
+    output reg hi_wr,
     output reg reset_out,
     output reg [1:0] shift_control_in,
     output reg [2:0] shift_control,
@@ -151,21 +151,21 @@ module control_unit (
                 Alu_Src_B = 3'b000;
                 Alu_Op = 3'b000;
                 Alu_out_wr = 1'b0;
-                PCSource = 3'b000;
+                PC_Source = 3'b000;
                 PC_wr = 1'b0;
                 EPC_wr = 1'b0;  
                 mem_wrmDataWrite = 1'b0;
                 load_control = 1'b0;
                 store_control = 2'b00;
-                MultOrDivLow = 1'b0;
-                MultOrDivHigh = 1'b0;
-                LOWrite = 1'b0;
-                HIWrite = 1'b0;
+                Mult_div_lo = 1'b0;
+                Mult_div_hi = 1'b0;
+                Lo_wr = 1'b0;
+                Hi_wr = 1'b0;
                 shift_control_in = 2'b00;
                 shift_n = 2'b00;
                 shift_control = 3'b000;
-                multStart = 1'b0;
-                divStart = 1'b0;
+                mult_start = 1'b0;
+                div_start = 1'b0;
 
                 reset_out = 1'b1;
 
@@ -196,21 +196,21 @@ module control_unit (
                 Alu_Src_B = 3'b000;
                 Alu_Op = 3'b000;
                 Alu_out_wr = 1'b0;
-                PCSource = 3'b000;
+                PC_Source = 3'b000;
                 PC_wr = 1'b0;
                 EPC_wr = 1'b0;  
                 mem_wrmDataWrite = 1'b0;
                 load_control = 1'b0;
                 store_control = 2'b00;
-                MultOrDivLow = 1'b0;
-                MultOrDivHigh = 1'b0;
-                LOWrite = 1'b0;
-                HIWrite = 1'b0;
+                Mult_div_lo = 1'b0;
+                Mult_div_hi = 1'b0;
+                Lo_wr = 1'b0;
+                Hi_wr = 1'b0;
                 shift_control_in = 2'b00;
                 shift_n = 2'b00;
                 shift_control = 3'b000;
-                multStart = 1'b0;
-                divStart = 1'b0;
+                mult_start = 1'b0;
+                div_start = 1'b0;
 
                 reset_out = 1'b0; //*
 
@@ -244,15 +244,15 @@ module control_unit (
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
     
                         reset_out = 1'b0;
 
@@ -261,7 +261,7 @@ module control_unit (
                         Alu_Src_A = 2'b00;
                         Alu_Src_B = 3'b001;
                         Alu_Op = 3'b001;
-                        PCSource = 3'b010;
+                        PC_Source = 3'b010;
 
                         counter = counter + 1;
 
@@ -269,7 +269,7 @@ module control_unit (
 
                         ir_wr = 1'b1;
                         PC_wr = 1'b1;
-                        PCSource = 3'b010;
+                        PC_Source = 3'b010;
                         Alu_Src_B = 3'b001;
                         Alu_Op = 3'b001;
                         counter = 6'b000000;
@@ -288,21 +288,21 @@ module control_unit (
                         ir_wr = 1'b0;
                         reg_dst = 2'b00;
                         mem_reg = 3'b000;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
     
                         reset_out = 1'b0;
 
@@ -324,21 +324,21 @@ module control_unit (
                         ir_wr = 1'b0;
                         reg_dst = 2'b00;
                         mem_reg = 3'b000;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -480,21 +480,21 @@ module control_unit (
                         reg_wr = 1'b0;
                         wr_A = 1'b0;
                         wr_B = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
     
 
                         reset_out = 1'b0;
@@ -524,21 +524,21 @@ module control_unit (
                             Alu_Src_B = 3'b000;
                             Alu_Op = 3'b000;
                             Alu_out_wr = 1'b0;
-                            PCSource = 3'b000;
+                            PC_Source = 3'b000;
                             PC_wr = 1'b0;
                             EPC_wr = 1'b0;  
                             mem_wrmDataWrite = 1'b0;
                             load_control = 1'b0;
                             store_control = 2'b00;
-                            MultOrDivLow = 1'b0;
-                            MultOrDivHigh = 1'b0;
-                            LOWrite = 1'b0;
-                            HIWrite = 1'b0;
+                            Mult_div_lo = 1'b0;
+                            Mult_div_hi = 1'b0;
+                            Lo_wr = 1'b0;
+                            Hi_wr = 1'b0;
                             shift_control_in = 2'b00;
                             shift_n = 2'b00;
                             shift_control = 3'b000;
-                            multStart = 1'b0;
-                            divStart = 1'b0;
+                            mult_start = 1'b0;
+                            div_start = 1'b0;
         
 
                             reset_out = 1'b0;
@@ -579,21 +579,21 @@ module control_unit (
                                 Alu_Src_B = 3'b000;
                                 Alu_Op = 3'b000;
                                 Alu_out_wr = 1'b0;
-                                PCSource = 3'b000;
+                                PC_Source = 3'b000;
                                 PC_wr = 1'b0;
                                 EPC_wr = 1'b0;  
                                 mem_wrmDataWrite = 1'b0;
                                 load_control = 1'b0;
                                 store_control = 2'b00;
-                                MultOrDivLow = 1'b0;
-                                MultOrDivHigh = 1'b0;
-                                LOWrite = 1'b0;
-                                HIWrite = 1'b0;
+                                Mult_div_lo = 1'b0;
+                                Mult_div_hi = 1'b0;
+                                Lo_wr = 1'b0;
+                                Hi_wr = 1'b0;
                                 shift_control_in = 2'b00;
                                 shift_n = 2'b00;
                                 shift_control = 3'b000;
-                                multStart = 1'b0;
-                                divStart = 1'b0;
+                                mult_start = 1'b0;
+                                div_start = 1'b0;
             
 
                                 reset_out = 1'b0;
@@ -629,21 +629,21 @@ module control_unit (
                         reg_wr = 1'b0;
                         wr_A = 1'b0;
                         wr_B = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;    
+                        mult_start = 1'b0;
+                        div_start = 1'b0;    
 
                         reset_out = 1'b0;
 
@@ -672,21 +672,21 @@ module control_unit (
                             Alu_Src_B = 3'b000;
                             Alu_Op = 3'b000;
                             Alu_out_wr = 1'b0;
-                            PCSource = 3'b000;
+                            PC_Source = 3'b000;
                             PC_wr = 1'b0;
                             EPC_wr = 1'b0;  
                             mem_wrmDataWrite = 1'b0;
                             load_control = 1'b0;
                             store_control = 2'b00;
-                            MultOrDivLow = 1'b0;
-                            MultOrDivHigh = 1'b0;
-                            LOWrite = 1'b0;
-                            HIWrite = 1'b0;
+                            Mult_div_lo = 1'b0;
+                            Mult_div_hi = 1'b0;
+                            Lo_wr = 1'b0;
+                            Hi_wr = 1'b0;
                             shift_control_in = 2'b00;
                             shift_n = 2'b00;
                             shift_control = 3'b000;
-                            multStart = 1'b0;
-                            divStart = 1'b0;            
+                            mult_start = 1'b0;
+                            div_start = 1'b0;            
 
                             reset_out = 1'b0;
                             counter = 6'b000000;
@@ -723,21 +723,21 @@ module control_unit (
                             Alu_Src_B = 3'b000;
                             Alu_Op = 3'b000;
                             Alu_out_wr = 1'b0;
-                            PCSource = 3'b000;
+                            PC_Source = 3'b000;
                             PC_wr = 1'b0;
                             EPC_wr = 1'b0;  
                             mem_wrmDataWrite = 1'b0;
                             load_control = 1'b0;
                             store_control = 2'b00;
-                            MultOrDivLow = 1'b0;
-                            MultOrDivHigh = 1'b0;
-                            LOWrite = 1'b0;
-                            HIWrite = 1'b0;
+                            Mult_div_lo = 1'b0;
+                            Mult_div_hi = 1'b0;
+                            Lo_wr = 1'b0;
+                            Hi_wr = 1'b0;
                             shift_control_in = 2'b00;
                             shift_n = 2'b00;
                             shift_control = 3'b000;
-                            multStart = 1'b0;
-                            divStart = 1'b0;            
+                            mult_start = 1'b0;
+                            div_start = 1'b0;            
 
                             reset_out = 1'b0;
                             counter = 6'b000000;
@@ -773,21 +773,21 @@ module control_unit (
                         reg_wr = 1'b0;
                         wr_A = 1'b0;
                         wr_B = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;    
+                        mult_start = 1'b0;
+                        div_start = 1'b0;    
 
                         reset_out = 1'b1;
 
@@ -838,21 +838,21 @@ module control_unit (
                         reg_wr = 1'b0;
                         wr_A = 1'b0;
                         wr_B = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -903,21 +903,21 @@ module control_unit (
                         reg_wr = 1'b0;
                         wr_A = 1'b0;
                         wr_B = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -945,21 +945,21 @@ module control_unit (
                             Alu_Src_B = 3'b000;
                             Alu_Op = 3'b000;
                             Alu_out_wr = 1'b0;
-                            PCSource = 3'b000;
+                            PC_Source = 3'b000;
                             PC_wr = 1'b0;
                             EPC_wr = 1'b0;  
                             mem_wrmDataWrite = 1'b0;
                             load_control = 1'b0;
                             store_control = 2'b00;
-                            MultOrDivLow = 1'b0;
-                            MultOrDivHigh = 1'b0;
-                            LOWrite = 1'b0;
-                            HIWrite = 1'b0;
+                            Mult_div_lo = 1'b0;
+                            Mult_div_hi = 1'b0;
+                            Lo_wr = 1'b0;
+                            Hi_wr = 1'b0;
                             shift_control_in = 2'b00;
                             shift_n = 2'b00;
                             shift_control = 3'b000;
-                            multStart = 1'b0;
-                            divStart = 1'b0;
+                            mult_start = 1'b0;
+                            div_start = 1'b0;
 
                             reset_out = 1'b0;
 
@@ -999,21 +999,21 @@ module control_unit (
                             Alu_Src_B = 3'b000;
                             Alu_Op = 3'b000;
                             Alu_out_wr = 1'b0;
-                            PCSource = 3'b000;
+                            PC_Source = 3'b000;
                             PC_wr = 1'b0;
                             EPC_wr = 1'b0;  
                             mem_wrmDataWrite = 1'b0;
                             load_control = 1'b0;
                             store_control = 2'b00;
-                            MultOrDivLow = 1'b0;
-                            MultOrDivHigh = 1'b0;
-                            LOWrite = 1'b0;
-                            HIWrite = 1'b0;
+                            Mult_div_lo = 1'b0;
+                            Mult_div_hi = 1'b0;
+                            Lo_wr = 1'b0;
+                            Hi_wr = 1'b0;
                             shift_control_in = 2'b00;
                             shift_n = 2'b00;
                             shift_control = 3'b000;
-                            multStart = 1'b0;
-                            divStart = 1'b0;
+                            mult_start = 1'b0;
+                            div_start = 1'b0;
         
 
                             reset_out = 1'b0;
@@ -1056,21 +1056,21 @@ module control_unit (
                             Alu_Src_B = 3'b000;
                             Alu_Op = 3'b000;
                             Alu_out_wr = 1'b0;
-                            PCSource = 3'b000;
+                            PC_Source = 3'b000;
                             PC_wr = 1'b0;
                             EPC_wr = 1'b0;  
                             mem_wrmDataWrite = 1'b0;
                             load_control = 1'b0;
                             store_control = 2'b00;
-                            MultOrDivLow = 1'b0;
-                            MultOrDivHigh = 1'b0;
-                            LOWrite = 1'b0;
-                            HIWrite = 1'b0;
+                            Mult_div_lo = 1'b0;
+                            Mult_div_hi = 1'b0;
+                            Lo_wr = 1'b0;
+                            Hi_wr = 1'b0;
                             shift_control_in = 2'b00;
                             shift_n = 2'b00;
                             shift_control = 3'b000;
-                            multStart = 1'b0;
-                            divStart = 1'b0;
+                            mult_start = 1'b0;
+                            div_start = 1'b0;
         
 
                             reset_out = 1'b1;
@@ -1086,21 +1086,21 @@ module control_unit (
                         ir_wr = 1'b0;
                         wr_A = 1'b0;
                         wr_B = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         mem_reg = 3'b000;
                         reg_dst = 2'b00;
@@ -1119,7 +1119,7 @@ module control_unit (
                     end else begin
 
                         EPC_wr = 1'b1;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b1;
 
                         state = fetch;
@@ -1141,21 +1141,21 @@ module control_unit (
                         wr_A = 1'b0;
                         wr_B = 1'b0;
                         Alu_out_wr = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -1180,7 +1180,7 @@ module control_unit (
                     end else begin
 
                         EPC_wr = 1'b1;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b1;
 
                         state = fetch;
@@ -1201,21 +1201,21 @@ module control_unit (
                         wr_A = 1'b0;
                         wr_B = 1'b0;
                         Alu_out_wr = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -1240,7 +1240,7 @@ module control_unit (
                     end else begin
 
                         EPC_wr = 1'b1;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b1;
 
                         state = fetch;
@@ -1263,24 +1263,24 @@ module control_unit (
                         wr_A = 1'b0;
                         wr_B = 1'b0;
                         Alu_out_wr = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         cause_control = 2'b00;
                         IorD = 3'b000;
                         mem_wr = 1'b0;
                         Alu_Src_A = 2'b00;
                         Alu_Src_B = 3'b000;
                         Alu_Op = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -1341,18 +1341,18 @@ module control_unit (
                         Alu_Src_B = 3'b000;
                         Alu_Op = 3'b000;
                         Alu_out_wr = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
-                        multStart = 1'b0;
-                        divStart = 1'b0;    
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;    
 
                         reset_out = 1'b0;
 
@@ -1411,20 +1411,20 @@ module control_unit (
                     Alu_Src_B = 3'b000;
                     Alu_Op = 3'b000;
                     Alu_out_wr = 1'b0;
-                    PCSource = 3'b000;
+                    PC_Source = 3'b000;
                     PC_wr = 1'b0;
                     EPC_wr = 1'b0;  
                     mem_wrmDataWrite = 1'b0;
                     load_control = 1'b0;
                     store_control = 2'b00;
-                    MultOrDivLow = 1'b0;
-                    MultOrDivHigh = 1'b0;
-                    LOWrite = 1'b0;
-                    HIWrite = 1'b0;
+                    Mult_div_lo = 1'b0;
+                    Mult_div_hi = 1'b0;
+                    Lo_wr = 1'b0;
+                    Hi_wr = 1'b0;
                     shift_control_in = 2'b00;
                     shift_n = 2'b00;
-                    multStart = 1'b0;
-                    divStart = 1'b0;
+                    mult_start = 1'b0;
+                    div_start = 1'b0;
 
                     reset_out = 1'b0;
 
@@ -1482,18 +1482,18 @@ module control_unit (
                         Alu_Src_B = 3'b000;
                         Alu_Op = 3'b000;
                         Alu_out_wr = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -1551,18 +1551,18 @@ module control_unit (
                         Alu_Src_B = 3'b000;
                         Alu_Op = 3'b000;
                         Alu_out_wr = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -1620,18 +1620,18 @@ module control_unit (
                         Alu_Src_B = 3'b000;
                         Alu_Op = 3'b000;
                         Alu_out_wr = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -1691,19 +1691,19 @@ module control_unit (
                     mem_wrmDataWrite = 1'b0;
                     load_control = 1'b0;
                     store_control = 2'b00;
-                    MultOrDivLow = 1'b0;
-                    MultOrDivHigh = 1'b0;
-                    LOWrite = 1'b0;
-                    HIWrite = 1'b0;
+                    Mult_div_lo = 1'b0;
+                    Mult_div_hi = 1'b0;
+                    Lo_wr = 1'b0;
+                    Hi_wr = 1'b0;
                     shift_control_in = 2'b00;
                     shift_n = 2'b00;
                     shift_control = 3'b000;
-                    multStart = 1'b0;
-                    divStart = 1'b0;
+                    mult_start = 1'b0;
+                    div_start = 1'b0;
 
                     reset_out = 1'b0;
 
-                    PCSource = 3'b101;
+                    PC_Source = 3'b101;
                     PC_wr = 1'b1;
 
                     counter = 6'b000000;
@@ -1725,21 +1725,21 @@ module control_unit (
                     reg_wr = 1'b0;
                     wr_A = 1'b0;
                     wr_B = 1'b0;
-                    PCSource = 3'b000;
+                    PC_Source = 3'b000;
                     PC_wr = 1'b0;
                     EPC_wr = 1'b0;  
                     mem_wrmDataWrite = 1'b0;
                     load_control = 1'b0;
                     store_control = 2'b00;
-                    MultOrDivLow = 1'b0;
-                    MultOrDivHigh = 1'b0;
-                    LOWrite = 1'b0;
-                    HIWrite = 1'b0;
+                    Mult_div_lo = 1'b0;
+                    Mult_div_hi = 1'b0;
+                    Lo_wr = 1'b0;
+                    Hi_wr = 1'b0;
                     shift_control_in = 2'b00;
                     shift_n = 2'b00;
                     shift_control = 3'b000;
-                    multStart = 1'b0;
-                    divStart = 1'b0;
+                    mult_start = 1'b0;
+                    div_start = 1'b0;
 
                     reset_out = 1'b0; 
 
@@ -1807,21 +1807,21 @@ module control_unit (
                     reg_wr = 1'b0;
                     wr_A = 1'b0;
                     wr_B = 1'b0;
-                    PCSource = 3'b000;
+                    PC_Source = 3'b000;
                     PC_wr = 1'b0;
                     EPC_wr = 1'b0;  
                     mem_wrmDataWrite = 1'b0;
                     load_control = 1'b0;
                     store_control = 2'b00;
-                    MultOrDivLow = 1'b0;
-                    MultOrDivHigh = 1'b0;
-                    LOWrite = 1'b0;
-                    HIWrite = 1'b0;
+                    Mult_div_lo = 1'b0;
+                    Mult_div_hi = 1'b0;
+                    Lo_wr = 1'b0;
+                    Hi_wr = 1'b0;
                     shift_control_in = 2'b00;
                     shift_n = 2'b00;
                     shift_control = 3'b000;
-                    multStart = 1'b0;
-                    divStart = 1'b0;
+                    mult_start = 1'b0;
+                    div_start = 1'b0;
 
                     reset_out = 1'b0; 
 
@@ -1889,21 +1889,21 @@ module control_unit (
                     reg_wr = 1'b0;
                     wr_A = 1'b0;
                     wr_B = 1'b0;
-                    PCSource = 3'b000;
+                    PC_Source = 3'b000;
                     PC_wr = 1'b0;
                     EPC_wr = 1'b0;  
                     mem_wrmDataWrite = 1'b0;
                     load_control = 1'b0;
                     store_control = 2'b00;
-                    MultOrDivLow = 1'b0;
-                    MultOrDivHigh = 1'b0;
-                    LOWrite = 1'b0;
-                    HIWrite = 1'b0;
+                    Mult_div_lo = 1'b0;
+                    Mult_div_hi = 1'b0;
+                    Lo_wr = 1'b0;
+                    Hi_wr = 1'b0;
                     shift_control_in = 2'b00;
                     shift_n = 2'b00;
                     shift_control = 3'b000;
-                    multStart = 1'b0;
-                    divStart = 1'b0;
+                    mult_start = 1'b0;
+                    div_start = 1'b0;
 
                     reset_out = 1'b0; 
 
@@ -1971,21 +1971,21 @@ module control_unit (
                         reg_wr = 1'b0;
                         wr_A = 1'b0;
                         wr_B = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -2052,21 +2052,21 @@ module control_unit (
                         reg_wr = 1'b0;
                         wr_A = 1'b0;
                         wr_B = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -2133,21 +2133,21 @@ module control_unit (
                         reg_wr = 1'b0;
                         wr_A = 1'b0;
                         wr_B = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -2199,21 +2199,21 @@ module control_unit (
                         wr_A = 1'b0;
                         wr_B = 1'b0;
                         Alu_out_wr = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 1'b0;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         cause_control = 2'b00;
                         IorD = 3'b000;
                         mem_wr = 1'b0;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
     
                         reset_out = 1'b0;
 
@@ -2252,21 +2252,21 @@ module control_unit (
                         wr_A = 1'b0;
                         wr_B = 1'b0;
                         Alu_out_wr = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 1'b0;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         cause_control = 2'b00;
                         IorD = 3'b000;
                         mem_wr = 1'b0;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
     
                         reset_out = 1'b0;
 
@@ -2310,15 +2310,15 @@ module control_unit (
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 1'b0;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         cause_control = 2'b00;
                         IorD = 3'b000;
                         mem_wr = 1'b0;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
     
                         reset_out = 1'b0;
 
@@ -2329,7 +2329,7 @@ module control_unit (
                         Alu_Src_A = 2'b00;
                         Alu_Src_B = 3'b001;
                         Alu_Op = 3'b010;
-                        PCSource = 3'b010;
+                        PC_Source = 3'b010;
                         PC_wr = 1'b1;
 
                         counter = 6'b000000;
@@ -2356,15 +2356,15 @@ module control_unit (
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -2378,7 +2378,7 @@ module control_unit (
 
                         if(et == 1'b1)begin
 
-                            PCSource = 3'b100;
+                            PC_Source = 3'b100;
                             PC_wr = 1'b1;
 
                             counter = 6'b000000;
@@ -2417,15 +2417,15 @@ module control_unit (
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -2439,7 +2439,7 @@ module control_unit (
 
                         if(et == 1'b0)begin
 
-                            PCSource = 3'b100;
+                            PC_Source = 3'b100;
                             PC_wr = 1'b1;
 
                             counter = 6'b000000;
@@ -2478,15 +2478,15 @@ module control_unit (
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -2500,7 +2500,7 @@ module control_unit (
 
                         if(et == 1'b1 || lt == 1'b1)begin
 
-                            PCSource = 3'b100;
+                            PC_Source = 3'b100;
                             PC_wr = 1'b1;
 
                             counter = 6'b000000;
@@ -2539,15 +2539,15 @@ module control_unit (
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -2561,7 +2561,7 @@ module control_unit (
 
                         if(gt == 1'b1)begin
 
-                            PCSource = 3'b100;
+                            PC_Source = 3'b100;
                             PC_wr = 1'b1;
 
                             counter = 6'b000000;
@@ -2592,8 +2592,8 @@ module control_unit (
                     mem_wrmDataWrite = 1'b0;
                     load_control = 1'b0;
                     store_control = 1'b0;
-                    MultOrDivLow = 1'b0;
-                    MultOrDivHigh = 1'b0;
+                    Mult_div_lo = 1'b0;
+                    Mult_div_hi = 1'b0;
                     cause_control = 2'b00;
                     IorD = 3'b000;
                     mem_wr = 1'b0;
@@ -2604,17 +2604,17 @@ module control_unit (
                     shift_n = 2'b00;
                     shift_control = 3'b000;
                     shift_control_in = 2'b00;
-                    LOWrite = 1'b0;
-                    HIWrite = 1'b0;
+                    Lo_wr = 1'b0;
+                    Hi_wr = 1'b0;
                     mem_reg = 3'b000;
                     reg_dst = 2'b00;
                     reg_wr = 1'b0;
-                    multStart = 1'b0;
-                    divStart = 1'b0;
+                    mult_start = 1'b0;
+                    div_start = 1'b0;
 
                     reset_out = 1'b0;
 
-                    PCSource = 3'b001;
+                    PC_Source = 3'b001;
                     PC_wr = 1'b1;
 
                     state = fetch;
@@ -2642,19 +2642,19 @@ module control_unit (
                     mem_wrmDataWrite = 1'b0;
                     load_control = 1'b0;
                     store_control = 2'b00;
-                    MultOrDivLow = 1'b0;
-                    MultOrDivHigh = 1'b0;
-                    LOWrite = 1'b0;
-                    HIWrite = 1'b0;
+                    Mult_div_lo = 1'b0;
+                    Mult_div_hi = 1'b0;
+                    Lo_wr = 1'b0;
+                    Hi_wr = 1'b0;
                     shift_control_in = 2'b00;
                     shift_n = 2'b00;
                     shift_control = 3'b000;
-                    multStart = 1'b0;
-                    divStart = 1'b0;
+                    mult_start = 1'b0;
+                    div_start = 1'b0;
 
                     reset_out = 1'b0;
 
-                    PCSource = 3'b011;
+                    PC_Source = 3'b011;
                     PC_wr = 1'b1;
 
                     counter = 6'b000000;
@@ -2679,17 +2679,17 @@ module control_unit (
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;   
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -2704,7 +2704,7 @@ module control_unit (
 
                         reg_dst = 2'b10;
                         mem_reg = 3'b011;
-                        PCSource = 3'b011;
+                        PC_Source = 3'b011;
                         reg_wr =  1'b1;
                         PC_wr = 1'b1;
 
@@ -2733,20 +2733,20 @@ module control_unit (
                         reg_wr = 1'b0;
                         wr_A = 1'b0;
                         wr_B = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -2815,24 +2815,24 @@ module control_unit (
                         reg_wr = 1'b0;
                         wr_A = 1'b0;
                         wr_B = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         Alu_Src_A = 2'b00;
                         Alu_Src_B = 3'b000;
                         Alu_Op = 3'b000;
                         Alu_out_wr = 1'b0;
-                        multStart = 1'b0;
-                        divStart = 1'b0;
+                        mult_start = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
@@ -2895,21 +2895,21 @@ module control_unit (
                     Alu_Src_B = 3'b000;
                     Alu_Op = 3'b000;
                     Alu_out_wr = 1'b0;
-                    PCSource = 3'b000;
+                    PC_Source = 3'b000;
                     PC_wr = 1'b0;
                     EPC_wr = 1'b0;  
                     mem_wrmDataWrite = 1'b0;
                     load_control = 1'b0;
                     store_control = 2'b00;
-                    MultOrDivLow = 1'b0;
-                    MultOrDivHigh = 1'b0;
-                    LOWrite = 1'b0;
-                    HIWrite = 1'b0;
+                    Mult_div_lo = 1'b0;
+                    Mult_div_hi = 1'b0;
+                    Lo_wr = 1'b0;
+                    Hi_wr = 1'b0;
                     shift_control_in = 2'b00;
                     shift_n = 2'b00;
                     shift_control = 3'b000;
-                    multStart = 1'b0;
-                    divStart = 1'b0;
+                    mult_start = 1'b0;
+                    div_start = 1'b0;
 
                     reset_out = 1'b1;
 
@@ -2935,21 +2935,21 @@ module control_unit (
                     Alu_Src_B = 3'b000;
                     Alu_Op = 3'b000;
                     Alu_out_wr = 1'b0;
-                    PCSource = 3'b000;
+                    PC_Source = 3'b000;
                     PC_wr = 1'b0;
                     EPC_wr = 1'b0;  
                     mem_wrmDataWrite = 1'b0;
                     load_control = 1'b0;
                     store_control = 2'b00;
-                    MultOrDivLow = 1'b0;
-                    MultOrDivHigh = 1'b0;
-                    LOWrite = 1'b0;
-                    HIWrite = 1'b0;
+                    Mult_div_lo = 1'b0;
+                    Mult_div_hi = 1'b0;
+                    Lo_wr = 1'b0;
+                    Hi_wr = 1'b0;
                     shift_control_in = 2'b00;
                     shift_n = 2'b00;
                     shift_control = 3'b000;
-                    multStart = 1'b0;
-                    divStart = 1'b0;
+                    mult_start = 1'b0;
+                    div_start = 1'b0;
 
                     reset_out = 1'b0;
 
@@ -2980,40 +2980,40 @@ module control_unit (
                         Alu_Src_B = 3'b000;
                         Alu_Op = 3'b000;
                         Alu_out_wr = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        divStart = 1'b0;
+                        div_start = 1'b0;
 
                         reset_out = 1'b0;
 
-                        multStart = 1'b1;
-                        MultOrDivHigh = 1'b0;
-                        MultOrDivLow = 1'b0;
+                        mult_start = 1'b1;
+                        Mult_div_hi = 1'b0;
+                        Mult_div_lo = 1'b0;
 
                         counter = counter + 1;
 
                     end else if(counter == 6'b100001) begin
                         
-                        LOWrite = 1'b1;
-                        HIWrite = 1'b1;
+                        Lo_wr = 1'b1;
+                        Hi_wr = 1'b1;
 
                         counter = 6'b000000;
                         state = fetch;
 
                     end else begin
                         
-                        multStart = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        MultOrDivLow = 1'b0;
+                        mult_start = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Mult_div_lo = 1'b0;
 
                         counter = counter + 1;
 
@@ -3038,33 +3038,33 @@ module control_unit (
                         Alu_Src_B = 3'b000;
                         Alu_Op = 3'b000;
                         Alu_out_wr = 1'b0;
-                        PCSource = 3'b000;
+                        PC_Source = 3'b000;
                         PC_wr = 1'b0;
                         EPC_wr = 1'b0;  
                         mem_wrmDataWrite = 1'b0;
                         load_control = 1'b0;
                         store_control = 2'b00;
-                        MultOrDivLow = 1'b0;
-                        MultOrDivHigh = 1'b0;
-                        LOWrite = 1'b0;
-                        HIWrite = 1'b0;
+                        Mult_div_lo = 1'b0;
+                        Mult_div_hi = 1'b0;
+                        Lo_wr = 1'b0;
+                        Hi_wr = 1'b0;
                         shift_control_in = 2'b00;
                         shift_n = 2'b00;
                         shift_control = 3'b000;
-                        multStart = 1'b0;
+                        mult_start = 1'b0;
 
                         reset_out = 1'b0;
 
-                        divStart = 1'b1;
-                        MultOrDivHigh = 1'b1;
-                        MultOrDivLow = 1'b1;
+                        div_start = 1'b1;
+                        Mult_div_hi = 1'b1;
+                        Mult_div_lo = 1'b1;
 
                         counter = counter + 1;
 
                     end else if(counter == 6'b100001) begin
 
-                        LOWrite = 1'b1;
-                        HIWrite = 1'b1;
+                        Lo_wr = 1'b1;
+                        Hi_wr = 1'b1;
 
                         counter = 6'b000000;
                         state = fetch;                        
@@ -3086,30 +3086,30 @@ module control_unit (
                                 Alu_Src_B = 3'b000;
                                 Alu_Op = 3'b000;
                                 Alu_out_wr = 1'b0;
-                                PCSource = 3'b000;
+                                PC_Source = 3'b000;
                                 PC_wr = 1'b0;
                                 EPC_wr = 1'b0;  
                                 mem_wrmDataWrite = 1'b0;
                                 load_control = 1'b0;
                                 store_control = 2'b00;
-                                MultOrDivLow = 1'b0;
-                                MultOrDivHigh = 1'b0;
-                                LOWrite = 1'b0;
-                                HIWrite = 1'b0;
+                                Mult_div_lo = 1'b0;
+                                Mult_div_hi = 1'b0;
+                                Lo_wr = 1'b0;
+                                Hi_wr = 1'b0;
                                 shift_control_in = 2'b00;
                                 shift_n = 2'b00;
                                 shift_control = 3'b000;
-                                multStart = 1'b0;
-                                divStart = 1'b0;
+                                mult_start = 1'b0;
+                                div_start = 1'b0;
                                 
                                 reset_out = 1'b0;
 
                                 state = zero_div_start;
                                 counter = 6'b000000;
                             end else begin
-                                divStart = 1'b0;
-                                MultOrDivHigh = 1'b1;
-                                MultOrDivLow = 1'b1;
+                                div_start = 1'b0;
+                                Mult_div_hi = 1'b1;
+                                Mult_div_lo = 1'b1;
 
                                 counter = counter + 1;
                             end
