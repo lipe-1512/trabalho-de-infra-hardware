@@ -5,13 +5,13 @@ module PC (
     wire [5:0] OpCode;
     wire OpCode404;
     wire [4:0] rs, rt, rd, shamt, MuxRegDstOut, ShiftNControlOut;
-    wire [15:0] Imediato;
+    wire [15:0] imediato;
     wire [31:0] ImediatoExtendido32bits, ImediatoToBrench, MuxMemToRegOut, PCOut, EPCOut, CauseControlOut, IorDout, MemOut;
     wire [31:0] BRoutA, BRoutB, AOut, MuxResultA, MuxResultB, AluResult, AluOutResult, MemDataRegisterOut, LoadOut, StoreOut;
     wire [31:0] SOut, SHOut, SBOut, ShiftInputControlOut, RegDeslocOut, PCSourceResult, 
     
     //MULT E DIV
-    wire [31:0] MultOrDivHigh, MultOrDivLow, MultHiOut, MultLoOut, DivHiOut, DivLoOut, HighOut, LowOut;
+    wire [31:0] Mult_div_hi, Mult_div_lo, MultHiOut, MultLoOut, DivHiOut, DivLoOut, HighOut, LowOut;
 
     //JUMP
     wire [31:0] JumpAddress;
@@ -41,12 +41,12 @@ module PC (
     wire EPC_wr,  
     wire [1:0] load_control,
     wire [1:0] store_control,
-    wire multStart,
-    wire divStart,
-    wire MultOrDivLow,
-    wire MultOrDivHigh,
-    wire LOWrite,
-    wire HIWrite,
+    wire mult_start,
+    wire div_start,
+    wire Mult_div_lo,
+    wire Mult_div_hi,
+    wire Lo_wr,
+    wire Hi_wr,
     wire reset_out,
     wire [1:0] shift_control_in,
     wire [2:0] shift_control,
@@ -56,7 +56,7 @@ module PC (
     parameter ra = 5'b11111;
 
     RegDesloc regDeslc(
-        clk, reset, ShiftControl, ShiftNControlOut, ShiftInputControlOut, RegDeslocOut
+        clk, reset, Shift_control, ShiftNControlOut, ShiftInputControlOut, RegDeslocOut
     );
 
     Memoria mem(
@@ -64,7 +64,7 @@ module PC (
     );
 
     control_of_data c_o_d(
-        PCOut, Imediato, MemDataRegisterOut, RS, RT, BOut,
+        PCOut, imediato, MemDataRegisterOut, RS, RT, BOut,
         PCAux, RD, SHAMT, JumpFromInstruction, BOut5bits, 
         MemDataRegisterOut5bits, SHOut, SBOut, SOut
     );
@@ -74,17 +74,17 @@ module PC (
     );
 
     Instr_Reg IR(
-        clk, reset, ir_wr, MemOut, OpCode, RS, RT, Imediato
+        clk, reset, ir_wr, MemOut, OpCode, RS, RT, imediato
     );
 
     ula32 ALU(
-        MuxResultA, MuxResultB, AluOperation, AluResult, O, neg, zero, et, gt, lt 
+        MuxResultA, MuxResultB, Alu_Op, AluResult, O, neg, zero, et, gt, lt 
     );
 
-    //Registradores
+    //REGs
 
     Registrador PC(
-        clk, reset, PCWrite, PCSourceResult, PCOut
+        clk, reset, PC_wr, PCSourceResult, PCOut
     );
 
     Registrador A(
@@ -96,29 +96,29 @@ module PC (
     );
 
     Registrador AluOut(
-        clk, reset, AluOutWrite, AluResult, AluOutResult
+        clk, reset, Alu_out_wr, AluResult, AluOutResult
     );
 
     Registrador MemDataRegister(
-        clk, reset, MemDataWrite, MemOut, MemDataRegisterOut
+        clk, reset, Mem_wr, MemOut, MemDataRegisterOut
     );
 
     Registrador EPC(
-        clk, reset, EPCWrite, AluResult, EPCOut
+        clk, reset, EPC_wr, AluResult, EPCOut
     );
 
     Registrador HI(
-        clk, reset, HIWrite, MultOrDivHighOut, HighOut 
+        clk, reset, Hi_wr, MultOrDivHighOut, HighOut 
     );
 
     Registrador LO(
-        clk, reset, LOWrite, MultOrDivLowOut, LowOut
+        clk, reset, Lo_wr, MultOrDivLowOut, LowOut
     );
 
     //MUXS
 
     muxpcsource muxpcsource(
-        {{24{1'b0}}, MemOut[7:0]}, AOut, AluResult, {PCOut[31:28], JumpShifted}, AluOutResult, EPCOut, PCSource, PCSourceResult
+        {{24{1'b0}}, MemOut[7:0]}, AOut, AluResult, {PCOut[31:28], JumpShifted}, AluOutResult, EPCOut, PC_Source, PCSourceResult
     );
 
     muxcausecontrol cc(
@@ -134,12 +134,12 @@ module PC (
     );
 
     muxalusrcA muxalusrca(
-        PCOut, MemOut, AOut, 32'b00000000000000000000000000011101, AluSrcA, MuxResultA
+        PCOut, MemOut, AOut, 32'b00000000000000000000000000011101, Alu_Src_A, MuxResultA
     );
 
     muxalusrcB muxalusrcb(
         BOut, 32'b00000000000000000000000000000100, ImediatoExtendido32bits,
-        MemDataRegisterOut, ImediatoToBrench, AluSrcB, MuxResultB
+        MemDataRegisterOut, ImediatoToBrench, Alu_Src_B, MuxResultB
     );
 
     muxmemtoreg muxmemtoreg(
@@ -147,34 +147,34 @@ module PC (
     );
 
     muxload load(
-        {{16{1'b0}}, MemDataRegisterOut[15:0]}, {{24{1'b0}}, MemDataRegisterOut[7:0]}, MemDataRegisterOut, LoadControl, LoadOut
+        {{16{1'b0}}, MemDataRegisterOut[15:0]}, {{24{1'b0}}, MemDataRegisterOut[7:0]}, MemDataRegisterOut, Load_control, LoadOut
     );
 
     muxStore store(
-        SHOut, SBOut, SOut, StoreControl, StoreOut
+        SHOut, SBOut, SOut, Store_control, StoreOut
     );
 
     muxShiftInput si(
-        AOut, ImediatoExtendido32bits, BOut, ShiftInputControl, ShiftInputControlOut
+        AOut, ImediatoExtendido32bits, BOut, Shift_control_in, ShiftInputControlOut
     );
 
     muxshiftN sn(
-        BOut5bits, 5'b10000, SHAMT, MemDataRegisterOut5bits, ShiftNControl, ShiftNControlOut 
+        BOut5bits, 5'b10000, SHAMT, MemDataRegisterOut5bits, Shift_n, ShiftNControlOut 
     );
 
     muxmultordiv multOrDivHI(
-        MultHiOut, DivHiOut, MultOrDivHigh, MultOrDivHighOut
+        MultHiOut, DivHiOut, Mult_div_hi, MultOrDivHighOut
     );
 
     muxmultordiv MultOrDivLO(
-        MultLoOut, DivLoOut, MultOrDivLow, MultOrDivLowOut
+        MultLoOut, DivLoOut, Mult_div_lo, MultOrDivLowOut
     );
 
 
     //Signal Extend
 
     signext16_32 imediatoExtender(
-        Imediato, ImediatoExtendido32bits
+        imediato, ImediatoExtendido32bits
     );
 
     signext1_32 LTExtender(
@@ -196,22 +196,22 @@ module PC (
     //Mult e Div
 
     Mult multiplication(
-        clk, reset, multStart, AOut, BOut, MultHiOut, MultLoOut  
+        clk, reset, mult_start, AOut, BOut, MultHiOut, MultLoOut  
     );
 
     Div division(
-        clk, reset, divStart, AOut, BOut, div_zero, DivHiOut, DivLoOut
+        clk, reset, div_start, AOut, BOut, div_zero, DivHiOut, DivLoOut
     );
 
-    //Unidade de controle
+    //control_unit
 
     ControlUnit UnitOfControl(
-        clk, reset, O, OpCode404, div_zero, OpCode, zero, lt, et, gt, neg, IorD, cause_control, mem_wr, ir_wr, 
-        reg_dst, mem_reg, reg_wr, wr_A, wr_B, AluSrcA, AluSrcB,
-        AluOperation, AluOutWrite, PCSource, PCWrite, EPCWrite,
-        MemDataWrite, LoadControl, StoreControl, 
-        MultOrDivLow, MultOrDivHigh, LOWrite, HIWrite,
-        ShiftInputControl, ShiftNControl, ShiftControl, multStart, divStart,reset 
+        clk, reset, O, OpCode404, imediato[5:0], div_zero, OpCode, zero, lt, et, gt, neg, IorD, cause_control, mem_wr, ir_wr, 
+        reg_dst, mem_reg, reg_wr, wr_A, wr_B, Alu_Src_A, Alu_Src_B,
+        Alu_Op, Alu_out_wr, PC_Source, PC_wr, EPC_wr,
+        Mem_wr, Load_control, Store_control, 
+        Mult_div_lo, Mult_div_hi, Lo_wr, hi_wr,
+        Shift_control_in, Shift_n, Shift_control, mult_start, div_start,reset 
     );
 
 

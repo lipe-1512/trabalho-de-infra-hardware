@@ -1,4 +1,4 @@
-module div(input wire clk, reset, divStart, input wire [31:0] A, B, output reg div_zero, output reg [31:0] Hi, Lo);
+module div(input wire clk, reset, div_start, input wire [31:0] A, B, output reg div_zero, output reg [31:0] Hi, Lo);
    
     reg seletor = 1'b0;
     reg [5:0] nOfBits; // número de ciclos
@@ -27,7 +27,7 @@ module div(input wire clk, reset, divStart, input wire [31:0] A, B, output reg d
 
         end
 
-        if(divStart == 1'b1)begin
+        if(div_start == 1'b1)begin
 
             seletor = 1'b1;
             nOfBits = 6'd32;
