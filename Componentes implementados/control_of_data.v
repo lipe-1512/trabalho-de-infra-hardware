@@ -4,7 +4,7 @@ module control_of_data (
     input wire [15:0] imediato,
    
     output wire [3:0] PC_1
-    output wire [4:0] rd, shamt,
+    output wire [4:0] rd, shamt, B_out_5bits, mem_reg_out_5bits
     output wire [25:0] jump_instruc,
     output wire [31:0] sh_out, s_out, sb_out
 );
@@ -24,6 +24,8 @@ module control_of_data (
 
     assign PC_1 = saida_PCSource[31:28];
     assign rd = imediato[15:11];
+    assign B_5_bits = B_out_5bits[4:0];
+    assign mem_reg_5bits = mem_reg_out_5bits[4:0];
     assign shamt =imediato[10:6];
     assign jump_instruc = {rs, rt, imediato};
     assign sh_out = {SH_mem_in, SH_B_in};

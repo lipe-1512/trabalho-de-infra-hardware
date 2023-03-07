@@ -2709,7 +2709,6 @@ module control_unit (
                     end
 
                 end
-   
                 MFHI: begin
 
                     IorD = 3'b000;
