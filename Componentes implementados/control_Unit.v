@@ -63,14 +63,12 @@ module control_unit (
     parameter SUB = 6'b010100;
     parameter BREAK = 6'b010101;
     parameter RTE = 6'b010110;
-    parameter ADDM = 6'b010111;
     parameter ADDI = 6'b011000;
     parameter ADDIU = 6'b011001;
     parameter BEQ = 6'b011010;
     parameter BNE = 6'b011011;
     parameter BLE = 6'b011100;
     parameter BGT = 6'b011101;
-    parameter SLLM = 6'b011110;
     parameter LB = 6'b011111;
     parameter LH = 6'b100000;
     parameter LUI = 6'b100001;
@@ -403,9 +401,6 @@ module control_unit (
                                     RTEFunct: begin
                                          state =  RTE;
                                         end
-                                    ADDMFunct: begin
-                                         state =  ADDM;
-                                        end
                                 endcase
                             end
                                 
@@ -426,9 +421,6 @@ module control_unit (
                                 end
                             BGTop: begin
                                  state = BGT;
-                                end
-                            SLLMop: begin
-                                 state = SLLM;
                                 end
                             LBop: begin
                                  state = LB;
@@ -2719,170 +2711,6 @@ module control_unit (
                     end
 
                 end
-
-                SLLM: begin
-
-                    if(counter == 6'b000000)begin
-
-                        IorD = 3'b000;
-                        cause_control = 2'b00;
-                        mem_wr = 1'b0;
-                        ir_wr = 1'b0;
-                        reg_dst = 2'b00;
-                        mem_reg = 3'b000;
-                        reg_wr = 1'b0;
-                        wr_A = 1'b0;
-                        wr_B = 1'b0;
-                        PC_Source = 3'b000;
-                        PC_wr = 1'b0;
-                        EPC_wr = 1'b0;  
-                        mem_wrmDataWrite = 1'b0;
-                        load_control = 1'b0;
-                        store_control = 2'b00;
-                        Mult_div_lo = 1'b0;
-                        Mult_div_hi = 1'b0;
-                        Lo_wr = 1'b0;
-                        Hi_wr = 1'b0;
-                        shift_control_in = 2'b00;
-                        shift_n = 2'b00;
-                        mult_start = 1'b0;
-                        div_start = 1'b0;
-
-                        reset_out = 1'b0;
-
-                        Alu_Src_A = 2'b10;
-                        Alu_Src_B = 3'b010;
-                        Alu_Op = 3'b001;
-                        Alu_out_wr = 1'b1;
-
-                        counter = counter + 1;
-
-                    end else if(counter == 6'b000001 || counter == 6'b000010) begin
-
-                        IorD = 3'b100;
-                        mem_wr = 1'b0;
-
-                        Alu_Src_A = 2'b00;
-                        Alu_Src_B = 3'b000;
-                        Alu_Op = 3'b000;
-                        Alu_out_wr = 1'b0;
-
-                        counter = counter + 1;
-
-                    end else if(counter == 6'b000011) begin
-
-                        mem_wrmDataWrite = 1'b1;
-                        shift_control = 3'b001;
-
-                        counter = counter + 1;
-
-                    end else if(counter == 6'b000100)begin
-
-                        shift_control = 3'b001; //load
-                        shift_control_in = 2'b10;
-                        shift_n = 2'b11;
-
-                        counter = counter + 1;
-                        
-
-                    end else if(counter == 6'b000101) begin
-
-                        shift_control = 3'b010;
-
-                        counter = counter + 1;
-
-                    end else begin
-
-                        mem_reg = 3'b101;
-                        reg_dst = 2'b00;
-                        reg_wr = 1'b1;
-
-                        counter = 6'b000000;
-                        state = fetch;
-
-                    end
-
-                end
-
-                ADDM: begin
-
-                    if(counter == 6'b000000 || counter == 6'b000001) begin
-
-                        cause_control = 2'b00;
-                        ir_wr = 1'b0;
-                        reg_dst = 2'b00;
-                        mem_reg = 3'b000;
-                        reg_wr = 1'b0;
-                        wr_A = 1'b0;
-                        wr_B = 1'b0;
-                        PC_Source = 3'b000;
-                        PC_wr = 1'b0;
-                        EPC_wr = 1'b0;  
-                        mem_wrmDataWrite = 1'b0;
-                        load_control = 1'b0;
-                        store_control = 2'b00;
-                        Mult_div_lo = 1'b0;
-                        Mult_div_hi = 1'b0;
-                        Lo_wr = 1'b0;
-                        Hi_wr = 1'b0;
-                        shift_control_in = 2'b00;
-                        shift_n = 2'b00;
-                        Alu_Src_A = 2'b00;
-                        Alu_Src_B = 3'b000;
-                        Alu_Op = 3'b000;
-                        Alu_out_wr = 1'b0;
-                        mult_start = 1'b0;
-                        div_start = 1'b0;
-
-                        reset_out = 1'b0;
-
-                        IorD = 3'b011;
-                        mem_wr = 1'b0;
-
-                        counter = counter + 1;
-
-                    end else if(counter == 6'b000010)begin
-
-                        mem_wrmDataWrite = 1'b1;
-
-                        counter = counter + 1;
-
-                    end else if(counter == 6'b000011 || counter == 6'b000100)begin
-
-                        mem_wrmDataWrite = 1'b0;
-                        IorD = 3'b010;
-                        mem_wr = 1'b0;
-
-                        counter = counter + 1;
-
-                    end else if(counter == 6'b000101) begin
-
-                        Alu_Src_A = 2'b01;
-                        Alu_Src_B = 3'b011;
-                        Alu_Op = 3'b001;
-                        Alu_out_wr = 1'b1;
-
-                        counter = counter + 1;
-
-                    end else begin
-
-                        Alu_Src_A = 2'b00;
-                        Alu_Src_B = 3'b000;
-                        Alu_Op = 3'b000;
-                        Alu_out_wr = 1'b0;
-
-                        mem_reg = 3'b011;
-                        reg_dst = 2'b01;
-                        reg_wr = 1'b1;
-
-                        counter = 6'b000000;
-                        state = fetch;
-
-                    end
-
-
-                end
-                
                 MFHI: begin
 
                     IorD = 3'b000;
