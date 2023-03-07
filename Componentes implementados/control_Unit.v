@@ -81,9 +81,9 @@ module control_unit (
     parameter JAL = 6'b101001;
 
     // instruções R
-    parameter opcodeR = 6'b000000;
-    
-    parameter ADDFunct = 6'b100000;
+    parameter opcodeR = 6'b000000; //valores pegados da especificação do projeto
+
+    parameter ADDFunct = 6'b100000; 
     parameter ANDFunct = 6'b100100;
     parameter DIVFunct = 6'b011010;
     parameter MULTFunct = 6'b011000;
@@ -99,7 +99,6 @@ module control_unit (
     parameter SUBFunct = 6'b100010;
     parameter BREAKFunct = 6'b001101;
     parameter RTEFunct = 6'b010011;
-    parameter ADDMFunct = 6'b000101;
 
     //instruções I
 
@@ -109,7 +108,6 @@ module control_unit (
     parameter BNEop = 6'b000101;
     parameter BLEop = 6'b000110;
     parameter BGTop = 6'b000111;
-    parameter SLLMop = 6'b000001;
     parameter LBop = 6'b100000;
     parameter LHop = 6'b100001;
     parameter LWop = 6'b100011;
