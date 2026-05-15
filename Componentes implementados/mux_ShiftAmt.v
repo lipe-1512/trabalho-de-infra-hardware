@@ -1,9 +1,9 @@
 module mux_ShiftAmt (
-    wire input [4:0] zero, um, dois, //possíveis saída do mux
-    wire input [1:0] escolha, // selecionar a saída correta
-    wire output [4:0] saida_ShiftSrc //saída após a seleção
+    input wire [4:0] zero, um, dois,
+    input wire [1:0] escolha,
+    output wire [4:0] saida_ShiftAmt
 );
-    assign saida_ShiftSrc = (saida_ShiftSrc == 1'b00) ? zero:
-                            (saida_ShiftSrc == 1'b01) ? um:
-                            dois; // no caso de não está nos valores anteriores
+    assign saida_ShiftAmt = (escolha == 2'b00) ? zero :
+                            (escolha == 2'b01) ? um :
+                            dois;
 endmodule

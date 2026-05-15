@@ -1,6 +1,6 @@
 module S_1_to_32 (
-    wire input bit, // bit de entrada de 1 bit
-    wire output bits32 // bit de saída de 32 bits
+    input wire bit,
+    output wire [31:0] bits32
 );
-    assign bits32 = {32{bit}}; //repetir o bit de entrada 32 vezes
+    assign bits32 = {32{bit}};
 endmodule
