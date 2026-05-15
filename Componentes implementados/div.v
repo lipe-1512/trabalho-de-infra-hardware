@@ -1,10 +1,14 @@
-module div(
-    input wire clk, reset, div_start,
-    input wire [31:0] A, B,
+module div (
+    input wire clk, 
+    input wire reset, 
+    input wire div_start,
+    input wire [31:0] A, 
+    input wire [31:0] B,
     output reg div_zero,
-    output reg [31:0] Hi, Lo
+    output reg [31:0] Hi, 
+    output reg [31:0] Lo
 );
-    reg seletor = 1'b0;
+    reg seletor;
     reg [5:0] nOfBits;
     reg [31:0] divisor;
     reg [31:0] dividendo;
@@ -15,6 +19,7 @@ module div(
 
     always @(posedge clk) begin
         if (reset == 1'b1) begin
+            seletor <= 1'b0;
             nOfBits <= 6'd32;
             dividendo <= 32'b0;
             divisor <= 32'b0;
@@ -25,7 +30,6 @@ module div(
             Hi <= 32'b0;
             Lo <= 32'b0;
             div_zero <= 1'b0;
-            seletor <= 1'b0;
         end else if (div_start == 1'b1) begin
             seletor <= 1'b1;
             nOfBits <= 6'd32;
@@ -53,7 +57,7 @@ module div(
                     dividendo <= A;
                 end
             end
-        end else if (seletor == 1'b1 && nOfBits != 0) begin
+        end else if (seletor == 1'b1 && nOfBits != 6'd0) begin
             if (B == 32'b0) begin
                 div_zero <= 1'b1;
                 nOfBits <= 6'b0;

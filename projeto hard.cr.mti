@@ -1,0 +1,159 @@
+{C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/S16_to_32.v} {1 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/S16_to_32.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module S_16_to_32
+
+Top level modules:
+	S_16_to_32
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/S8_to_32.v} {1 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/S8_to_32.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module S8_to_32
+
+Top level modules:
+	S8_to_32
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/PC.v} {0 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/PC.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC
+** Error (suppressible): C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/PC.v(19): (vlog-2388) 'Mult_div_lo' already declared in this scope (PC) at C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/PC.v(11).
+** Error (suppressible): C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/PC.v(19): (vlog-2388) 'Mult_div_hi' already declared in this scope (PC) at C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/PC.v(11).
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes do Projeto/Instr_Reg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes do Projeto/Instr_Reg.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Instr_Reg
+-- Compiling architecture behavioral_arch of Instr_Reg
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_ShiftSrc.v} {1 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_ShiftSrc.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux_ShiftSrc
+
+Top level modules:
+	mux_ShiftSrc
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_memory_reg.v} {1 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_memory_reg.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux_memory_reg
+
+Top level modules:
+	mux_memory_reg
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_IorD.v} {1 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_IorD.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux_IorD
+
+Top level modules:
+	mux_IorD
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes do Projeto/ula32.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes do Projeto/ula32.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Ula32
+-- Compiling architecture behavioral of Ula32
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes do Projeto/Banco_reg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes do Projeto/Banco_reg.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Banco_reg
+-- Compiling architecture behavioral_arch of Banco_reg
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes do Projeto/RegDesloc.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes do Projeto/RegDesloc.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity RegDesloc
+-- Compiling architecture behavioral_arch of RegDesloc
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/control_Unit.v} {0 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/control_Unit.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module control_Unit
+** Error: C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/control_Unit.v(41): (vlog-13282) 'OpCode404' already declared in this scope.
+** Error: C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/control_Unit.v(108): (vlog-2730) Undefined variable: 'MemDataWrite'.
+
+} {4.0 6.0} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/SL_32_to_32.v} {1 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/SL_32_to_32.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module SL_32_to_32
+
+Top level modules:
+	SL_32_to_32
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/S_1_to_32.v} {1 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/S_1_to_32.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module S_1_to_32
+
+Top level modules:
+	S_1_to_32
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_ShiftAmt.v} {1 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_ShiftAmt.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux_ShiftAmt
+
+Top level modules:
+	mux_ShiftAmt
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_RegDst.v} {1 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_RegDst.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux_RegDst
+
+Top level modules:
+	mux_RegDst
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes do Projeto/Memoria.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes do Projeto/Memoria.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling package ram_constants
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package LPM_COMPONENTS
+-- Loading package ram_constants
+-- Compiling entity Memoria
+-- Compiling architecture behavioral_arch of Memoria
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_DataSrc.v} {1 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_DataSrc.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux_DataSrc
+
+Top level modules:
+	mux_DataSrc
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_PCSource.v} {1 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_PCSource.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux_PCSource
+
+Top level modules:
+	mux_PCSource
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_div_mult.v} {1 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_div_mult.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux_div_mult
+
+Top level modules:
+	mux_div_mult
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes do Projeto/Registrador.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes do Projeto/Registrador.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Registrador
+-- Compiling architecture behavioral_arch of Registrador
+
+} {} {}} {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_shift_control.v} {1 {vlog -work work -stats=none {C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/mux_shift_control.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mux_shift_control
+
+Top level modules:
+	mux_shift_control
+
+} {} {}}

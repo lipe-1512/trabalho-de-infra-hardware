@@ -1,0 +1,52 @@
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of ula32.vhd was successful.
+# Compile of control_of_data.v was successful.
+# Compile of control_Unit.v failed with 2 errors.
+# Compile of div.v was successful.
+# Compile of mux_ALUSrcA.v was successful.
+# Compile of mux_ALUSrcB.v was successful.
+# Compile of mux_DataSrc.v was successful.
+# Compile of mux_div_mult.v was successful.
+# Compile of mux_IorD.v was successful.
+# Compile of mux_memory_reg.v was successful.
+# Compile of mux_PCSource.v was successful.
+# Compile of mux_RegDst.v was successful.
+# Compile of mux_shift_control.v was successful.
+# Compile of mux_ShiftAmt.v was successful.
+# Compile of mux_ShiftSrc.v was successful.
+# Compile of PC.v failed with 2 errors.
+# Compile of S_1_to_32.v was successful.
+# Compile of S8_to_32.v was successful.
+# Compile of S16_to_32.v was successful.
+# Compile of SL_32_to_32.v was successful.
+# 25 compiles, 2 failed with 4 errors.
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of ula32.vhd was successful.
+# Compile of control_of_data.v was successful.
+# Compile of control_Unit.v was successful.
+# Compile of div.v was successful.
+# Compile of mux_ALUSrcA.v was successful.
+# Compile of mux_ALUSrcB.v was successful.
+# Compile of mux_DataSrc.v was successful.
+# Compile of mux_div_mult.v was successful.
+# Compile of mux_IorD.v was successful.
+# Compile of mux_memory_reg.v was successful.
+# Compile of mux_PCSource.v was successful.
+# Compile of mux_RegDst.v was successful.
+# Compile of mux_shift_control.v was successful.
+# Compile of mux_ShiftAmt.v was successful.
+# Compile of mux_ShiftSrc.v was successful.
+# Compile of PC.v was successful.
+# Compile of S_1_to_32.v was successful.
+# Compile of S8_to_32.v was successful.
+# Compile of S16_to_32.v was successful.
+# Compile of SL_32_to_32.v was successful.
+# 25 compiles, 0 failed with no errors.
