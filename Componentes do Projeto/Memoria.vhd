@@ -47,7 +47,7 @@
 package ram_constants is
 	constant DATA_WIDTH : INTEGER := 8;
 	constant ADDR_WIDTH : INTEGER := 8;
-	constant INIT_FILE  : STRING  := "instrucoes.mif";
+	constant INIT_FILE  : STRING  := "C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes do Projeto/instrucoes.mif";
 end ram_constants;
 
 --*************************************************************************
