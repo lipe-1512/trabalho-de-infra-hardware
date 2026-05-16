@@ -16,36 +16,35 @@ module PC (
     wire [31:0] Mult_hi_out, Mult_lo_out, Div_hi_out, Div_lo_out,
                 High_out, Low_out, Mult_div_hi, Mult_div_lo;
     wire [31:0] jump;
-    wire [27:0] jump_shift;
+    wire [31:0] jump_shift; // Changed to 32 bits
     wire [25:0] jump_instruction;
     wire zero, neg, lt, gt, et, O, div_zero_flag;
     wire [31:0] Lt_extend;
     
-    // Sinais de controle (Widths atualizados para corrigir warnings)
+    // Sinais de controle da Unidade de Controle (Widths updated to match Muxes)
     wire [2:0] IorD, Alu_Op, PC_Source, shift_control;
-    wire [3:0] mem_reg;              // 4 bits para selecionar 8 entradas
+    wire [3:0] mem_reg;              // 4 bits for 8-input mux
     wire mem_wr, ir_wr, reg_wr, wr_A, wr_B, Alu_out_wr, PC_wr, EPC_wr;
     wire mult_start, div_start, reset_out;
     wire [1:0] cause_control;
-    wire [2:0] reg_dst;              // 3 bits para selecionar 6 entradas
+    wire [2:0] reg_dst;              // 3 bits for 6-input mux
     wire [1:0] Alu_Src_A;
-    wire [2:0] Alu_Src_B;            // 3 bits para selecionar 5 entradas
-    wire [3:0] load_control;         // 4 bits para selecionar 11 entradas
-    wire [3:0] store_control;        // 4 bits para selecionar 11 entradas
+    wire [2:0] Alu_Src_B;            // 3 bits for 5-input mux
+    wire [3:0] load_control;         // 4 bits for 11-input mux
+    wire [3:0] store_control;        // 4 bits for 11-input mux
     wire [1:0] shift_control_in, shift_n;
     wire [1:0] mult_div_sel_lo, mult_div_sel_hi;
     wire Lo_wr, Hi_wr;
-    wire [2:0] shift_n_wire;
     
-    parameter SP = 5'b11101;
-    parameter RA = 5'b11111;
+    parameter SP = 5'b11101;  // r29 - Stack Pointer
+    parameter RA = 5'b11111;  // r31 - Return Address
 
     // ===== INSTANCIAÇÃO DE COMPONENTES VHDL =====
     RegDesloc regDeslc (
         .Clk(clk),
         .Reset(reset),
         .Shift(shift_control),
-        .N(shift_n_control_out),      // Conexão direta (5 bits para 5 bits)
+        .N(shift_n_control_out),      // 5 bits
         .Entrada(shift_input_control_out),
         .Saida(reg_deslo_out)
     );
@@ -106,6 +105,7 @@ module PC (
         .Menor(lt)
     );
     
+    // ===== REGISTRADORES DE 32 BITS (VHDL) =====
     Registrador PC_reg (
         .Clk(clk),
         .Reset(reset),
@@ -175,7 +175,7 @@ module PC (
         .zero({{24{1'b0}}, mem_out[7:0]}),
         .um(A_out),
         .dois(Alu_res),
-        .tres({pc_out[31:28], jump_shift}),
+        .tres({pc_out[31:28], jump_shift[27:0]}), // Extract 28 bits
         .quatro(Alu_res),
         .cinco(EPC_out),
         .escolha(PC_Source),
@@ -307,6 +307,7 @@ module PC (
         .out_mux_div_mult(Mult_div_lo)
     );
 
+    // ===== EXTENSÃO DE SINAL E DESLOCAMENTO =====
     S_16_to_32 imediatoExtender (
         .multX2(imediato),
         .out_32(Imediato_32bits)
@@ -323,11 +324,12 @@ module PC (
     );
     
     SL_32_to_32 jumpShifter (
-        .local({4'b0000, jump_instruction, 2'b00}), // Padding para 32 bits
+        .local({4'b0000, jump_instruction, 2'b00}), // Padded to 32 bits
         .out_Sl(jump_shift)
     );
 
-    div division (
+    // ===== DIVISOR (Verilog) =====
+    div division ( // Changed from 'Div' to 'div'
         .clk(clk),
         .reset(reset),
         .div_start(div_start),
@@ -338,6 +340,7 @@ module PC (
         .Lo(Div_lo_out)
     );
 
+    // ===== UNIDADE DE CONTROLE =====
     control_Unit UnitOfControl (
         .clk(clk),
         .reset(reset),

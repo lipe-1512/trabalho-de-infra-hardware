@@ -10,17 +10,17 @@ module control_Unit (
     output reg reg_wr,
     output reg wr_A,
     output reg wr_B,
-    output reg [3:0] mem_reg,       // Aumentado para 4 bits
-    output reg [2:0] reg_dst,       // Aumentado para 3 bits
+    output reg [3:0] mem_reg,       // 4 bits
+    output reg [2:0] reg_dst,       // 3 bits
     output reg [1:0] Alu_Src_A,
-    output reg [2:0] Alu_Src_B,     // Aumentado para 3 bits
+    output reg [2:0] Alu_Src_B,     // 3 bits
     output reg [2:0] Alu_Op,
     output reg Alu_out_wr,
     output reg [2:0] PC_Source,
     output reg PC_wr,
     output reg EPC_wr,
-    output reg [3:0] load_control,  // Aumentado para 4 bits
-    output reg [3:0] store_control, // Aumentado para 4 bits
+    output reg [3:0] load_control,  // 4 bits
+    output reg [3:0] store_control, // 4 bits
     output reg mult_start,
     output reg div_start,
     output reg [1:0] mult_div_sel_lo,
