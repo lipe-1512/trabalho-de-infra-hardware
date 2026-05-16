@@ -324,7 +324,7 @@ module PC (
     );
     
     SL_32_to_32 jumpShifter (
-        .local({2'b00, jump_instruction, 2'b00}), // Padded to 32 bits
+        .local({4'b0000, jump_instruction, 2'b00}), // Padded to 32 bits
         .out_Sl(jump_shift)
     );
 
