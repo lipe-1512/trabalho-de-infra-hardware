@@ -10,17 +10,17 @@ module control_Unit (
     output reg reg_wr,
     output reg wr_A,
     output reg wr_B,
-    output reg [3:0] mem_reg,       // Changed from [2:0] to [3:0]
-    output reg [2:0] reg_dst,       // Changed from [1:0] to [2:0]
+    output reg [3:0] mem_reg,       // Aumentado para 4 bits
+    output reg [2:0] reg_dst,       // Aumentado para 3 bits
     output reg [1:0] Alu_Src_A,
-    output reg [2:0] Alu_Src_B,     // Changed from [1:0] to [2:0]
+    output reg [2:0] Alu_Src_B,     // Aumentado para 3 bits
     output reg [2:0] Alu_Op,
     output reg Alu_out_wr,
     output reg [2:0] PC_Source,
     output reg PC_wr,
     output reg EPC_wr,
-    output reg [3:0] load_control,  // Changed from [1:0] to [3:0]
-    output reg [3:0] store_control, // Changed from [1:0] to [3:0]
+    output reg [3:0] load_control,  // Aumentado para 4 bits
+    output reg [3:0] store_control, // Aumentado para 4 bits
     output reg mult_start,
     output reg div_start,
     output reg [1:0] mult_div_sel_lo,
@@ -97,11 +97,11 @@ module control_Unit (
             reg_dst <= 3'b000; mem_reg <= 4'b0000; reg_wr <= 1'b0; wr_A <= 1'b0; wr_B <= 1'b0;
             Alu_Src_A <= 2'b00; Alu_Src_B <= 3'b000; Alu_Op <= 3'b000; Alu_out_wr <= 1'b0;
             PC_Source <= 3'b000; PC_wr <= 1'b0; EPC_wr <= 1'b0;
-            load_control <= 4'b0000; store_control <= 4'b0000; 
+            load_control <= 4'b0000; store_control <= 4'b0000;
             mult_div_sel_lo <= 2'b00; mult_div_sel_hi <= 2'b00;
-            Lo_wr <= 1'b0; Hi_wr <= 1'b0; 
-            shift_control_in <= 2'b00; shift_n <= 2'b00; shift_control <= 3'b000; 
-            mult_start <= 1'b0; div_start <= 1'b0; 
+            Lo_wr <= 1'b0; Hi_wr <= 1'b0;
+            shift_control_in <= 2'b00; shift_n <= 2'b00; shift_control <= 3'b000;
+            mult_start <= 1'b0; div_start <= 1'b0;
             reset_out <= 1'b1;
         end else begin
             case (state)
@@ -119,13 +119,13 @@ module control_Unit (
                 
                 FETCH: begin
                     if (counter != 6'b000011) begin
-                        IorD <= 3'b000; mem_wr <= 1'b0; 
-                        Alu_Src_A <= 2'b00; Alu_Src_B <= 3'b001; Alu_Op <= 3'b001; 
+                        IorD <= 3'b000; mem_wr <= 1'b0;
+                        Alu_Src_A <= 2'b00; Alu_Src_B <= 3'b001; Alu_Op <= 3'b001;
                         PC_Source <= 3'b010; PC_wr <= 1'b0; ir_wr <= 1'b0;
                         counter <= counter + 1;
                     end else begin
-                        ir_wr <= 1'b1; PC_wr <= 1'b1; 
-                        state <= DECODE; 
+                        ir_wr <= 1'b1; PC_wr <= 1'b1;
+                        state <= DECODE;
                         counter <= 6'b000000;
                     end
                 end
@@ -133,7 +133,7 @@ module control_Unit (
                 DECODE: begin
                     if (counter == 6'b000000) begin
                         Alu_Src_A <= 2'b00; Alu_Src_B <= 3'b100; Alu_Op <= 3'b001;
-                        reg_wr <= 1'b0; Alu_out_wr <= 1'b1; 
+                        reg_wr <= 1'b0; Alu_out_wr <= 1'b1;
                         wr_A <= 1'b1; wr_B <= 1'b1;
                         counter <= counter + 1;
                     end else if (counter == 6'b000001) begin
@@ -184,23 +184,23 @@ module control_Unit (
                 // ========== INSTRUÇÕES ARITMÉTICAS ==========
                 ADD: begin
                     if (counter == 6'b000000) begin
-                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b000; Alu_Op <= 3'b001; 
+                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b000; Alu_Op <= 3'b001;
                         Alu_out_wr <= 1'b1;
                         counter <= counter + 1;
                     end else if (counter == 6'b000001) begin
                         if (O == 1'b1) begin
-                            state <= EXC_OVERFLOW; 
+                            state <= EXC_OVERFLOW;
                             counter <= 6'b000000;
                         end else begin
-                            mem_reg <= 4'b0011; reg_dst <= 3'b001; reg_wr <= 1'b1; 
+                            mem_reg <= 4'b0011; reg_dst <= 3'b001; reg_wr <= 1'b1;
                             counter <= counter + 1;
                         end
                     end else begin
                         if (O == 1'b1) begin
-                            state <= EXC_OVERFLOW; 
+                            state <= EXC_OVERFLOW;
                             counter <= 6'b000000;
                         end else begin
-                            state <= FETCH; 
+                            state <= FETCH;
                             counter <= 6'b000000;
                         end
                     end
@@ -208,23 +208,23 @@ module control_Unit (
                 
                 ADDI: begin
                     if (counter == 6'b000000) begin
-                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b010; Alu_Op <= 3'b001; 
+                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b010; Alu_Op <= 3'b001;
                         Alu_out_wr <= 1'b1;
                         counter <= counter + 1;
                     end else if (counter == 6'b000001) begin
                         if (O == 1'b1) begin
-                            state <= EXC_OVERFLOW; 
+                            state <= EXC_OVERFLOW;
                             counter <= 6'b000000;
                         end else begin
-                            mem_reg <= 4'b0011; reg_dst <= 3'b000; reg_wr <= 1'b1; 
+                            mem_reg <= 4'b0011; reg_dst <= 3'b000; reg_wr <= 1'b1;
                             counter <= counter + 1;
                         end
                     end else begin
                         if (O == 1'b1) begin
-                            state <= EXC_OVERFLOW; 
+                            state <= EXC_OVERFLOW;
                             counter <= 6'b000000;
                         end else begin
-                            state <= FETCH; 
+                            state <= FETCH;
                             counter <= 6'b000000;
                         end
                     end
@@ -232,23 +232,23 @@ module control_Unit (
                 
                 SUB: begin
                     if (counter == 6'b000000) begin
-                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b000; Alu_Op <= 3'b010; 
+                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b000; Alu_Op <= 3'b010;
                         Alu_out_wr <= 1'b1;
                         counter <= counter + 1;
                     end else if (counter == 6'b000001) begin
                         if (O == 1'b1) begin
-                            state <= EXC_OVERFLOW; 
+                            state <= EXC_OVERFLOW;
                             counter <= 6'b000000;
                         end else begin
-                            mem_reg <= 4'b0011; reg_dst <= 3'b001; reg_wr <= 1'b1; 
+                            mem_reg <= 4'b0011; reg_dst <= 3'b001; reg_wr <= 1'b1;
                             counter <= counter + 1;
                         end
                     end else begin
                         if (O == 1'b1) begin
-                            state <= EXC_OVERFLOW; 
+                            state <= EXC_OVERFLOW;
                             counter <= 6'b000000;
                         end else begin
-                            state <= FETCH; 
+                            state <= FETCH;
                             counter <= 6'b000000;
                         end
                     end
@@ -256,14 +256,14 @@ module control_Unit (
                 
                 AND: begin
                     if (counter == 6'b000000) begin
-                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b000; Alu_Op <= 3'b011; 
+                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b000; Alu_Op <= 3'b011;
                         Alu_out_wr <= 1'b1;
                         counter <= counter + 1;
                     end else if (counter == 6'b000001) begin
-                        mem_reg <= 4'b0011; reg_dst <= 3'b001; reg_wr <= 1'b1; 
+                        mem_reg <= 4'b0011; reg_dst <= 3'b001; reg_wr <= 1'b1;
                         counter <= counter + 1;
                     end else begin
-                        state <= FETCH; 
+                        state <= FETCH;
                         counter <= 6'b000000;
                     end
                 end
@@ -271,7 +271,7 @@ module control_Unit (
                 // ========== INSTRUÇÕES DE DESLOCAMENTO ==========
                 SLL: begin
                     if (counter == 6'b000000) begin
-                        shift_control <= 3'b001; shift_control_in <= 2'b10; 
+                        shift_control <= 3'b001; shift_control_in <= 2'b10;
                         shift_n <= 2'b10;
                         counter <= counter + 1;
                     end else if (counter == 6'b000001) begin
@@ -288,7 +288,7 @@ module control_Unit (
                 
                 SRA: begin
                     if (counter == 6'b000000) begin
-                        shift_control <= 3'b001; shift_control_in <= 2'b10; 
+                        shift_control <= 3'b001; shift_control_in <= 2'b10;
                         shift_n <= 2'b10;
                         counter <= counter + 1;
                     end else if (counter == 6'b000001) begin
@@ -306,11 +306,11 @@ module control_Unit (
                 // ========== INSTRUÇÕES DE MEMÓRIA ==========
                 LW: begin
                     if (counter == 6'b000000) begin
-                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b010; Alu_Op <= 3'b001; 
+                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b010; Alu_Op <= 3'b001;
                         Alu_out_wr <= 1'b1;
                         counter <= counter + 1;
                     end else if (counter == 6'b000001 || counter == 6'b000010) begin
-                        Alu_Src_A <= 2'b00; Alu_Src_B <= 3'b000; Alu_Op <= 3'b000; 
+                        Alu_Src_A <= 2'b00; Alu_Src_B <= 3'b000; Alu_Op <= 3'b000;
                         Alu_out_wr <= 1'b0;
                         IorD <= 3'b100; mem_wr <= 1'b0;
                         counter <= counter + 1;
@@ -326,121 +326,9 @@ module control_Unit (
                     end
                 end
                 
-                LH: begin
-                     if (counter == 6'b000000) begin
-                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b010; Alu_Op <= 3'b001; 
-                        Alu_out_wr <= 1'b1;
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000001 || counter == 6'b000010) begin
-                        Alu_Src_A <= 2'b00; Alu_Src_B <= 3'b000; Alu_Op <= 3'b000; 
-                        Alu_out_wr <= 1'b0;
-                        IorD <= 3'b100; mem_wr <= 1'b0;
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000011) begin
-                        mem_wr <= 1'b1; IorD <= 3'b000;
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000100) begin
-                        mem_wr <= 1'b0; load_control <= 4'b0000; // LH -> 4'b0000 (zero)
-                        mem_reg <= 4'b0010; reg_dst <= 3'b000; reg_wr <= 1'b1;
-                        counter <= counter + 1;
-                    end else begin
-                        state <= FETCH; counter <= 6'b000000;
-                    end
-                end
-
-                LB: begin
-                     if (counter == 6'b000000) begin
-                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b010; Alu_Op <= 3'b001; 
-                        Alu_out_wr <= 1'b1;
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000001 || counter == 6'b000010) begin
-                        Alu_Src_A <= 2'b00; Alu_Src_B <= 3'b000; Alu_Op <= 3'b000; 
-                        Alu_out_wr <= 1'b0;
-                        IorD <= 3'b100; mem_wr <= 1'b0;
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000011) begin
-                        mem_wr <= 1'b1; IorD <= 3'b000;
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000100) begin
-                        mem_wr <= 1'b0; load_control <= 4'b0001; // LB -> 4'b0001 (um)
-                        mem_reg <= 4'b0010; reg_dst <= 3'b000; reg_wr <= 1'b1;
-                        counter <= counter + 1;
-                    end else begin
-                        state <= FETCH; counter <= 6'b000000;
-                    end
-                end
-                
-                SW: begin
-                    if (counter == 6'b000000) begin
-                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b010; Alu_Op <= 3'b001; 
-                        Alu_out_wr <= 1'b1;
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000001 || counter == 6'b000010) begin
-                        Alu_Src_A <= 2'b00; Alu_Src_B <= 3'b000; Alu_Op <= 3'b000; 
-                        Alu_out_wr <= 1'b0;
-                        IorD <= 3'b000; mem_wr <= 1'b0;
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000011) begin
-                        mem_wr <= 1'b1;
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000100) begin
-                        mem_wr <= 1'b0; store_control <= 4'b0010; // SW -> 4'b0010 (dois)
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000101) begin
-                        IorD <= 3'b100; mem_wr <= 1'b1;
-                        counter <= counter + 1;
-                    end else begin
-                        state <= FETCH; counter <= 6'b000000;
-                    end
-                end
-                
-                SH: begin
-                    if (counter == 6'b000000) begin
-                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b010; Alu_Op <= 3'b001; 
-                        Alu_out_wr <= 1'b1;
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000001 || counter == 6'b000010) begin
-                        Alu_Src_A <= 2'b00; Alu_Src_B <= 3'b000; Alu_Op <= 3'b000; 
-                        Alu_out_wr <= 1'b0;
-                        IorD <= 3'b000; mem_wr <= 1'b0;
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000011) begin
-                        mem_wr <= 1'b1;
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000100) begin
-                        mem_wr <= 1'b0; store_control <= 4'b0000; // SH -> 4'b0000 (zero)
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000101) begin
-                        IorD <= 3'b100; mem_wr <= 1'b1;
-                        counter <= counter + 1;
-                    end else begin
-                        state <= FETCH; counter <= 6'b000000;
-                    end
-                end
-                
-                SB: begin
-                    if (counter == 6'b000000) begin
-                        Alu_Src_A <= 2'b10; Alu_Src_B <= 3'b010; Alu_Op <= 3'b001; 
-                        Alu_out_wr <= 1'b1;
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000001 || counter == 6'b000010) begin
-                        Alu_Src_A <= 2'b00; Alu_Src_B <= 3'b000; Alu_Op <= 3'b000; 
-                        Alu_out_wr <= 1'b0;
-                        store_control <= 4'b0001; // SB -> 4'b0001 (um)
-                        IorD <= 3'b000; mem_wr <= 1'b0;
-                        counter <= counter + 1;
-                    end else if (counter == 6'b000011) begin
-                        mem_wr <= 1'b1;
-                        counter <= counter + 1;
-                    end else begin
-                        IorD <= 3'b100; mem_wr <= 1'b1;
-                        state <= FETCH; counter <= 6'b000000;
-                    end
-                end
-                
                 LUI: begin
                     if (counter == 6'b000000) begin
-                        shift_n <= 2'b01; shift_control <= 3'b001; 
+                        shift_n <= 2'b01; shift_control <= 3'b001;
                         shift_control_in <= 2'b01;
                         counter <= counter + 1;
                     end else if (counter == 6'b000001) begin
@@ -448,7 +336,7 @@ module control_Unit (
                         counter <= counter + 1;
                     end else if (counter == 6'b000010) begin
                         mem_reg <= 4'b0101; reg_dst <= 3'b000; reg_wr <= 1'b1;
-                        shift_n <= 2'b00; shift_control <= 3'b000; 
+                        shift_n <= 2'b00; shift_control <= 3'b000;
                         shift_control_in <= 2'b00;
                         counter <= counter + 1;
                     end else begin
@@ -481,7 +369,7 @@ module control_Unit (
                 
                 JAL: begin
                     if (counter == 6'b000000) begin
-                        Alu_Src_A <= 2'b00; Alu_Src_B <= 3'b001; Alu_Op <= 3'b000; 
+                        Alu_Src_A <= 2'b00; Alu_Src_B <= 3'b001; Alu_Op <= 3'b000;
                         Alu_out_wr <= 1'b1;
                         counter <= counter + 1;
                     end else begin
@@ -535,13 +423,13 @@ module control_Unit (
                 // ========== EXCEÇÕES ==========
                 EXC_OPCODE, EXC_OVERFLOW, EXC_DIVZERO: begin
                     if (counter < 6'b000010) begin
-                        cause_control <= (state == EXC_OVERFLOW) ? 2'b01 : 
+                        cause_control <= (state == EXC_OVERFLOW) ? 2'b01 :
                                         (state == EXC_OPCODE) ? 2'b00 : 2'b10;
-                        IorD <= 3'b001; mem_wr <= 1'b0; 
+                        IorD <= 3'b001; mem_wr <= 1'b0;
                         Alu_Src_A <= 2'b00; Alu_Src_B <= 3'b001; Alu_Op <= 3'b010;
                         counter <= counter + 1;
                     end else begin
-                        EPC_wr <= 1'b1; PC_wr <= 1'b1; 
+                        EPC_wr <= 1'b1; PC_wr <= 1'b1;
                         state <= FETCH; counter <= 6'b000000;
                     end
                 end

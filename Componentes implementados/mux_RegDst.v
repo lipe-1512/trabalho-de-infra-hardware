@@ -1,3 +1,4 @@
+
 module mux_RegDst (
     input wire [4:0] zero, um, dois, tres, quatro, cinco,
     input wire [2:0] escolha,
