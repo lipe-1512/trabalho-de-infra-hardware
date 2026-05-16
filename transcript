@@ -321,3 +321,58 @@ vsim -gui work.PC
 #    Time: 0 ps  Iteration: 0  Instance: /PC/jumpShifter File: C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/PC.v Line: 322
 # ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (2) for port 'Alu_Src_B'. The port definition is at: C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/control_Unit.v(16).
 #    Time: 0 ps  Iteration: 0  Instance: /PC/UnitOfControl File: C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/PC.v Line: 340
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of ula32.vhd was successful.
+# Compile of control_of_data.v was successful.
+# Compile of control_Unit.v was successful.
+# Compile of div.v was successful.
+# Compile of mux_ALUSrcA.v was successful.
+# Compile of mux_ALUSrcB.v was successful.
+# Compile of mux_DataSrc.v was successful.
+# Compile of mux_div_mult.v was successful.
+# Compile of mux_IorD.v was successful.
+# Compile of mux_memory_reg.v was successful.
+# Compile of mux_PCSource.v was successful.
+# Compile of mux_RegDst.v was successful.
+# Compile of mux_shift_control.v was successful.
+# Compile of mux_ShiftAmt.v was successful.
+# Compile of mux_ShiftSrc.v was successful.
+# Compile of PC.v was successful.
+# Compile of S_1_to_32.v was successful.
+# Compile of S8_to_32.v was successful.
+# Compile of S16_to_32.v was successful.
+# Compile of SL_32_to_32.v was successful.
+# 25 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PC
+# Loading work.control_of_data
+# Loading work.mux_PCSource
+# Loading work.mux_div_mult
+# Loading work.mux_IorD
+# Loading work.mux_RegDst
+# Loading work.mux_ALUSrcA
+# Loading work.mux_ALUSrcB
+# Loading work.mux_memory_reg
+# Loading work.mux_DataSrc
+# Loading work.mux_shift_control
+# Loading work.mux_ShiftAmt
+# Loading work.S_16_to_32
+# Loading work.S_1_to_32
+# Loading work.SL_32_to_32
+# Loading work.div
+# Loading work.control_Unit
+# Loading work.regdesloc(behavioral_arch)
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# Loading work.registrador(behavioral_arch)
+# ** Fatal: (vsim-3363) The array length (5) of VHDL port 'N' does not match the width (8) of its Verilog connection (4th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /PC/regDeslc File: C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Componentes implementados/PC.v Line: 40
+# FATAL ERROR while loading design

@@ -16,17 +16,18 @@ module PC (
     wire [31:0] Mult_hi_out, Mult_lo_out, Div_hi_out, Div_lo_out, 
                 High_out, Low_out, Mult_div_hi, Mult_div_lo;
     wire [31:0] jump;
-    wire [27:0] jump_shift;
+    wire [31:0] jump_shift; // Changed to 32 bits
     wire [25:0] jump_instruction;
     wire zero, neg, lt, gt, et, O, div_zero_flag;
     wire [31:0] Lt_extend;
     
-    // Sinais de controle da Unidade de Controle
+    // Sinais de controle da Unidade de Controle (Widths updated)
     wire [2:0] IorD, Alu_Op, PC_Source, shift_control, mem_reg;
     wire mem_wr, ir_wr, reg_wr, wr_A, wr_B, Alu_out_wr, PC_wr, EPC_wr;
     wire mult_start, div_start, reset_out;
     wire [1:0] cause_control, reg_dst, Alu_Src_A, Alu_Src_B;
-    wire [1:0] load_control, store_control, shift_control_in, shift_n;
+    wire [3:0] load_control, store_control; // Changed to 4 bits
+    wire [1:0] shift_control_in, shift_n;
     wire [1:0] mult_div_sel_lo, mult_div_sel_hi;
     wire Lo_wr, Hi_wr;
     wire [2:0] shift_n_wire;
@@ -40,7 +41,9 @@ module PC (
         .Clk(clk), 
         .Reset(reset), 
         .Shift(shift_control), 
-        .N(shift_n_control_out),
+        .N({3'b000, shift_n_control_out}), // Padding N to 8 bits if needed, but VHDL is 5 bits. 
+                                           // Note: VHDL RegDesloc N is 5 bits. Verilog shift_n_control_out is 5 bits.
+                                           // If VHDL expects 5 bits, connect directly.
         .Entrada(shift_input_control_out), 
         .Saida(reg_deslo_out)
     );
@@ -171,7 +174,7 @@ module PC (
         .zero({{24{1'b0}}, mem_out[7:0]}), 
         .um(A_out), 
         .dois(Alu_res), 
-        .tres({pc_out[31:28], jump_shift}), 
+        .tres({pc_out[31:28], jump_shift[27:0]}), // Extract 28 bits from 32-bit wire
         .quatro(Alu_res), 
         .cinco(EPC_out), 
         .escolha(PC_Source), 
@@ -320,7 +323,7 @@ module PC (
     );
     
     SL_32_to_32 jumpShifter (
-        .local({jump_instruction, 2'b00}), 
+        .local({4'b0000, jump_instruction, 2'b00}), // Padded to 32 bits
         .out_Sl(jump_shift)
     );
 
