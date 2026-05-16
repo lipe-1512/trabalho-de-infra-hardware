@@ -1,4 +1,4 @@
-# 0 compiles, 25 failed with no errors.
+
 # Compile of Banco_reg.vhd was successful.
 # Compile of control_of_data.v was successful.
 # Compile of control_Unit.v was successful.
@@ -25,9 +25,8 @@
 # Compile of SL_32_to_32.v was successful.
 # Compile of ula32.vhd was successful.
 # 25 compiles, 0 failed with no errors.
-vsim -gui work.PC
-# vsim -gui work.PC 
-# Start time: 00:54:18 on May 16,2026
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # Loading work.PC
 # Loading work.control_of_data
 # Loading work.mux_PCSource
@@ -45,45 +44,54 @@ vsim -gui work.PC
 # Loading work.SL_32_to_32
 # Loading work.div
 # Loading work.control_Unit
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
 # Loading work.regdesloc(behavioral_arch)
-# Loading lpm.lpm_components
 # Loading work.ram_constants
 # Loading work.memoria(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading lpm.lpm_common_conversion(body)
-# Loading lpm.lpm_device_families(body)
-# Loading lpm.lpm_ram_dq(lpm_syn)
 # Loading work.banco_reg(behavioral_arch)
 # Loading work.instr_reg(behavioral_arch)
 # Loading work.ula32(behavioral)
 # Loading work.registrador(behavioral_arch)
-add wave -position end  sim:/PC/clk
-add wave -position end  sim:/PC/reset
-add wave -position end  sim:/PC/BR/Cluster(1) [31:0]
-add wave -position end  sim:/PC/BR/Cluster(2) [31:0]
-add wave -position 2  sim:/PC/UnitOfControl/counter
-add wave -position 3  sim:/PC/UnitOfControl/state
-add wave -position 2  sim:/PC/UnitOfControl/reset
-add wave -position 3  sim:/PC/UnitOfControl/reset_out
 force -freeze sim:/PC/clk 1 0, 0 {50 ps} -r 100
 run -continue
+# GetModuleFileName: N�o foi poss�vel encontrar o m�dulo especificado.
+# 
+# 
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /PC/BR
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /PC/BR
-# ** Warning: (vsim-7) Failed to open VHDL file "trabalho-de-infra-hardware/instrucoes.mif" in rb mode.
-# No such file or directory. (errno = ENOENT)
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_Three
-# ** Fatal: (vsim-7) Failed to open VHDL file "trabalho-de-infra-hardware/instrucoes.mif" in rb mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ps  Iteration: 0  Process: /PC/mem/MEM_plus_Three/MEMORY File: C:/intelFPGA/20.1/modelsim_ase/win32aloem/../altera/vhdl/src/220model/220model.vhd
-# Fatal error in Process MEMORY at C:/intelFPGA/20.1/modelsim_ase/win32aloem/../altera/vhdl/src/220model/220model.vhd line 4360
-# 
-# HDL call sequence:
-# Stopped at C:/intelFPGA/20.1/modelsim_ase/win32aloem/../altera/vhdl/src/220model/220model.vhd 4360 Process MEMORY
-# 
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem
+run -continue
+run -continue
+run -continue

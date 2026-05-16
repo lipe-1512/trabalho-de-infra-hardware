@@ -15,7 +15,7 @@ Z0 w1778886312
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 421
+!i122 446
 Z4 dC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware
 Z5 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Banco_reg.vhd
 Z6 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Banco_reg.vhd
@@ -25,9 +25,9 @@ V:adHbk0Ym0TAKYW83J5Y[3
 !s100 hZ46CT_BzQl8j]02_Vf=o2
 Z7 OV;C;2020.1;71
 32
-Z8 !s110 1778903633
+Z8 !s110 1778907211
 !i10b 1
-Z9 !s108 1778903633.000000
+Z9 !s108 1778907211.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Banco_reg.vhd|
 Z11 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Banco_reg.vhd|
 !i113 1
@@ -38,7 +38,7 @@ R1
 R2
 R3
 DEx4 work 9 banco_reg 0 22 :adHbk0Ym0TAKYW83J5Y[3
-!i122 421
+!i122 446
 l93
 L85 34
 VY7l=BkTbhRVIWWGL4mMo60
@@ -64,7 +64,7 @@ R4
 w1778888926
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/control_of_data.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/control_of_data.v
-!i122 422
+!i122 447
 L0 1 39
 Z16 OV;L;2020.1;71
 r1
@@ -87,7 +87,7 @@ R4
 w1778897219
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/control_Unit.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/control_Unit.v
-!i122 423
+!i122 448
 L0 1 448
 R16
 r1
@@ -101,7 +101,7 @@ R17
 R18
 ncontrol_@unit
 vdiv
-Z19 !s110 1778903634
+R8
 !i10b 1
 !s100 PX1?9I`9>5UEN4XRZPYoj2
 R14
@@ -111,7 +111,7 @@ R4
 w1778888945
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/div.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/div.v
-!i122 424
+!i122 449
 L0 1 93
 R16
 r1
@@ -127,21 +127,21 @@ Einstr_reg
 R0
 R2
 R3
-!i122 425
+!i122 450
 R4
-Z20 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Instr_Reg.vhd
-Z21 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Instr_Reg.vhd
+Z19 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Instr_Reg.vhd
+Z20 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Instr_Reg.vhd
 l0
 L42 1
 VAfV1kYS402dnLRiFO;Z7_2
 !s100 _X]FAEHlMn?]L[?c6kUO?1
 R7
 32
-R19
+R8
 !i10b 1
-Z22 !s108 1778903634.000000
-Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Instr_Reg.vhd|
-Z24 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Instr_Reg.vhd|
+R9
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Instr_Reg.vhd|
+Z22 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Instr_Reg.vhd|
 !i113 1
 R12
 R13
@@ -149,70 +149,70 @@ Abehavioral_arch
 R2
 R3
 DEx4 work 9 instr_reg 0 22 AfV1kYS402dnLRiFO;Z7_2
-!i122 425
+!i122 450
 l59
 L56 32
 VTD836jU:>9m^d?0ed1C0O3
 !s100 _AcjR?n;fJneQZzaIjJFa3
 R7
 32
-R19
+R8
 !i10b 1
+R9
+R21
 R22
-R23
-R24
 !i113 1
 R12
 R13
 Ememoria
-Z25 w1778901623
-Z26 DPx4 work 13 ram_constants 0 22 WDf_SOf;I=zG2no^oHiY]2
-Z27 DPx3 lpm 14 lpm_components 0 22 ZZ?0`GZD@?:kcFM0gmf[@1
+Z23 w1778907201
+Z24 DPx4 work 13 ram_constants 0 22 VKfE6CnTdUWXidd4o2V1o1
+Z25 DPx3 lpm 14 lpm_components 0 22 ZZ?0`GZD@?:kcFM0gmf[@1
 R1
 R2
 R3
-!i122 426
+!i122 451
 R4
-Z28 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Memoria.vhd
-Z29 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Memoria.vhd
+Z26 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Memoria.vhd
+Z27 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Memoria.vhd
 l0
 L61 1
 VR0;FXdh[Y4aC?L49?N<^Y1
 !s100 @ikC>NMBWeh_mNHCgFY??2
 R7
 32
-R19
+R8
 !i10b 1
-R22
-Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Memoria.vhd|
-Z31 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Memoria.vhd|
+R9
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Memoria.vhd|
+Z29 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Memoria.vhd|
 !i113 1
 R12
 R13
 Abehavioral_arch
-R26
-R27
+R24
+R25
 R1
 R2
 R3
 DEx4 work 7 memoria 0 22 R0;FXdh[Y4aC?L49?N<^Y1
-!i122 426
+!i122 451
 l92
 L71 91
 VI]zj<O^k5XMJIeBG6cL@b1
 !s100 n;Yo?nNJdMEChjL>Xc^dA2
 R7
 32
-R19
+R8
 !i10b 1
-R22
-R30
-R31
+R9
+R28
+R29
 !i113 1
 R12
 R13
 vmux_ALUSrcA
-R19
+Z30 !s110 1778907212
 !i10b 1
 !s100 J9h`S:E5]=2Y1@lzZoO@U1
 R14
@@ -222,13 +222,13 @@ R4
 w1778888957
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ALUSrcA.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ALUSrcA.v
-!i122 427
+!i122 452
 L0 1 10
 R16
 r1
 !s85 0
 31
-R22
+Z31 !s108 1778907212.000000
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ALUSrcA.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ALUSrcA.v|
 !i113 1
@@ -236,7 +236,7 @@ R17
 R18
 nmux_@a@l@u@src@a
 vmux_ALUSrcB
-R19
+R30
 !i10b 1
 !s100 FD<8Um>5cZ3SgJRbGAQS60
 R14
@@ -246,13 +246,13 @@ R4
 w1778888971
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ALUSrcB.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ALUSrcB.v
-!i122 428
+!i122 453
 Z32 L0 1 11
 R16
 r1
 !s85 0
 31
-R22
+R31
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ALUSrcB.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ALUSrcB.v|
 !i113 1
@@ -260,7 +260,7 @@ R17
 R18
 nmux_@a@l@u@src@b
 vmux_DataSrc
-R19
+R30
 !i10b 1
 !s100 nWQS`K2kzHKO@_noF:P3T1
 R14
@@ -270,13 +270,13 @@ R4
 w1778887589
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_DataSrc.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_DataSrc.v
-!i122 429
+!i122 454
 L0 1 17
 R16
 r1
 !s85 0
 31
-R22
+R31
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_DataSrc.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_DataSrc.v|
 !i113 1
@@ -284,7 +284,7 @@ R17
 R18
 nmux_@data@src
 vmux_div_mult
-Z33 !s110 1778903635
+R30
 !i10b 1
 !s100 a<U@UR_dXk5fk2ZBjP]0[1
 R14
@@ -294,20 +294,20 @@ R4
 w1778887610
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_div_mult.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_div_mult.v
-!i122 430
-Z34 L0 1 9
+!i122 455
+Z33 L0 1 9
 R16
 r1
 !s85 0
 31
-Z35 !s108 1778903635.000000
+R31
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_div_mult.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_div_mult.v|
 !i113 1
 R17
 R18
 vmux_IorD
-R33
+R30
 !i10b 1
 !s100 U0LMQZXN[PkURmo_6Ym:M3
 R14
@@ -317,13 +317,13 @@ R4
 w1778887624
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_IorD.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_IorD.v
-!i122 431
+!i122 456
 R32
 R16
 r1
 !s85 0
 31
-R35
+R31
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_IorD.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_IorD.v|
 !i113 1
@@ -331,7 +331,7 @@ R17
 R18
 nmux_@ior@d
 vmux_memory_reg
-R33
+R30
 !i10b 1
 !s100 QK[Jd8^O?k_N8A^UIKAlV1
 R14
@@ -341,20 +341,20 @@ R4
 w1778887643
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_memory_reg.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_memory_reg.v
-!i122 432
+!i122 457
 L0 1 15
 R16
 r1
 !s85 0
 31
-R35
+R31
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_memory_reg.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_memory_reg.v|
 !i113 1
 R17
 R18
 vmux_PCSource
-R33
+R30
 !i10b 1
 !s100 BeFdX:b<WQ^^]WB<i`0z41
 R14
@@ -364,13 +364,13 @@ R4
 w1778887680
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_PCSource.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_PCSource.v
-!i122 433
+!i122 458
 L0 1 12
 R16
 r1
 !s85 0
 31
-R35
+R31
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_PCSource.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_PCSource.v|
 !i113 1
@@ -378,7 +378,7 @@ R17
 R18
 nmux_@p@c@source
 vmux_RegDst
-R33
+R30
 !i10b 1
 !s100 MQ2b<^<XaY6lS[hjkk:^j1
 R14
@@ -388,13 +388,13 @@ R4
 w1778893110
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_RegDst.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_RegDst.v
-!i122 434
+!i122 459
 L0 2 12
 R16
 r1
 !s85 0
 31
-R35
+R31
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_RegDst.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_RegDst.v|
 !i113 1
@@ -402,7 +402,7 @@ R17
 R18
 nmux_@reg@dst
 vmux_shift_control
-R33
+Z34 !s110 1778907213
 !i10b 1
 !s100 VR_BaILcWfS^PWlI20LFQ3
 R14
@@ -412,20 +412,20 @@ R4
 w1778897070
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_shift_control.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_shift_control.v
-!i122 435
+!i122 460
 L0 1 7
 R16
 r1
 !s85 0
 31
-R35
+R31
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_shift_control.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_shift_control.v|
 !i113 1
 R17
 R18
 vmux_ShiftAmt
-Z36 !s110 1778903636
+R34
 !i10b 1
 !s100 ZjPmF6d6Ea0N^1?EUTQBA0
 R14
@@ -435,13 +435,13 @@ R4
 w1778887725
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ShiftAmt.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ShiftAmt.v
-!i122 436
-R34
+!i122 461
+R33
 R16
 r1
 !s85 0
 31
-Z37 !s108 1778903636.000000
+Z35 !s108 1778907213.000000
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ShiftAmt.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ShiftAmt.v|
 !i113 1
@@ -449,7 +449,7 @@ R17
 R18
 nmux_@shift@amt
 vmux_ShiftSrc
-R36
+R34
 !i10b 1
 !s100 7jDo9RdBT3oP?9CFNd^<P0
 R14
@@ -459,13 +459,13 @@ R4
 w1778887743
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ShiftSrc.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ShiftSrc.v
-!i122 437
-R34
+!i122 462
+R33
 R16
 r1
 !s85 0
 31
-R37
+R35
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ShiftSrc.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/mux_ShiftSrc.v|
 !i113 1
@@ -473,7 +473,7 @@ R17
 R18
 nmux_@shift@src
 vPC
-R36
+R34
 !i10b 1
 !s100 DlSU@3gQonQ<Ao`V1[[Mh3
 R14
@@ -483,13 +483,13 @@ R4
 w1778903454
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/PC.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/PC.v
-!i122 438
+!i122 463
 L0 1 385
 R16
 r1
 !s85 0
 31
-R37
+R35
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/PC.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/PC.v|
 !i113 1
@@ -497,22 +497,22 @@ R17
 R18
 n@p@c
 Pram_constants
-!i122 426
-R25
+!i122 451
+R23
 R4
-R28
-R29
+R26
+R27
 l0
 L47 1
-VWDf_SOf;I=zG2no^oHiY]2
-!s100 YKb@6:MlPj:84@`BV]W@^0
+VVKfE6CnTdUWXidd4o2V1o1
+!s100 M6m3R]4Bl]GF_8c88?eMP1
 R7
 32
-R19
+R8
 !i10b 1
-R22
-R30
-R31
+R9
+R28
+R29
 !i113 1
 R12
 R13
@@ -521,21 +521,21 @@ R0
 R1
 R2
 R3
-!i122 439
+!i122 464
 R4
-Z38 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/RegDesloc.vhd
-Z39 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/RegDesloc.vhd
+Z36 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/RegDesloc.vhd
+Z37 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/RegDesloc.vhd
 l0
 L80 1
 V4GibeROOKf]^CUjTE67Bo0
 !s100 =0ZG0kkZKT?Zo?iX2R9=P1
 R7
 32
-R36
+R34
 !i10b 1
-R37
-Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/RegDesloc.vhd|
-Z41 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/RegDesloc.vhd|
+R35
+Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/RegDesloc.vhd|
+Z39 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/RegDesloc.vhd|
 !i113 1
 R12
 R13
@@ -544,18 +544,18 @@ R1
 R2
 R3
 DEx4 work 9 regdesloc 0 22 4GibeROOKf]^CUjTE67Bo0
-!i122 439
+!i122 464
 l98
 L93 38
 VDFCTADkAb^4XhT09kD<k32
 !s100 3`2HClJO^bJLd6@PodWh?3
 R7
 32
-R36
+R34
 !i10b 1
-R37
-R40
-R41
+R35
+R38
+R39
 !i113 1
 R12
 R13
@@ -563,21 +563,21 @@ Eregistrador
 R0
 R2
 R3
-!i122 440
+!i122 465
 R4
-Z42 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Registrador.vhd
-Z43 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Registrador.vhd
+Z40 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Registrador.vhd
+Z41 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Registrador.vhd
 l0
 L53 1
 VD=`aG^VOPEDP69ifb8G;52
 !s100 ^e8=Z<CbNTLXR@XGZJMQo3
 R7
 32
-Z44 !s110 1778903637
+R34
 !i10b 1
-R37
-Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Registrador.vhd|
-Z46 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Registrador.vhd|
+R35
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Registrador.vhd|
+Z43 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/Registrador.vhd|
 !i113 1
 R12
 R13
@@ -585,23 +585,23 @@ Abehavioral_arch
 R2
 R3
 DEx4 work 11 registrador 0 22 D=`aG^VOPEDP69ifb8G;52
-!i122 440
+!i122 465
 l66
 L65 19
 V<kVfXRZJUh40ja<<lN_3:3
 !s100 EXKKzlBL1ARAk5TCN4`Vg2
 R7
 32
-R44
+R34
 !i10b 1
-R37
-R45
-R46
+R35
+R42
+R43
 !i113 1
 R12
 R13
 vS8_to_32
-R44
+R34
 !i10b 1
 !s100 coZz^LKYZhXg5VF4:?O7?2
 R14
@@ -611,13 +611,13 @@ R4
 w1778887905
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/S8_to_32.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/S8_to_32.v
-!i122 442
-Z47 L0 1 6
+!i122 467
+Z44 L0 1 6
 R16
 r1
 !s85 0
 31
-Z48 !s108 1778903637.000000
+R35
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/S8_to_32.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/S8_to_32.v|
 !i113 1
@@ -625,7 +625,7 @@ R17
 R18
 n@s8_to_32
 vS_16_to_32
-R44
+R34
 !i10b 1
 !s100 jYheXYH?@5E3Fh^0h6mEn3
 R14
@@ -635,13 +635,13 @@ R4
 w1778887897
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/S16_to_32.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/S16_to_32.v
-!i122 443
-R47
+!i122 468
+R44
 R16
 r1
 !s85 0
 31
-R48
+R35
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/S16_to_32.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/S16_to_32.v|
 !i113 1
@@ -649,7 +649,7 @@ R17
 R18
 n@s_16_to_32
 vS_1_to_32
-R44
+R34
 !i10b 1
 !s100 ?;Ge3g?EGPAh`iQb7[UX91
 R14
@@ -659,13 +659,13 @@ R4
 w1778887923
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/S_1_to_32.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/S_1_to_32.v
-!i122 441
-R47
+!i122 466
+R44
 R16
 r1
 !s85 0
 31
-R48
+R35
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/S_1_to_32.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/S_1_to_32.v|
 !i113 1
@@ -673,7 +673,7 @@ R17
 R18
 n@s_1_to_32
 vSL_32_to_32
-R44
+R34
 !i10b 1
 !s100 >9LYXC;9[5CiW]<]mF;K33
 R14
@@ -683,13 +683,13 @@ R4
 w1778891446
 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/SL_32_to_32.v
 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/SL_32_to_32.v
-!i122 444
-R47
+!i122 469
+R44
 R16
 r1
 !s85 0
 31
-R48
+R35
 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/SL_32_to_32.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/SL_32_to_32.v|
 !i113 1
@@ -701,21 +701,21 @@ R0
 R1
 R2
 R3
-!i122 445
+!i122 470
 R4
-Z49 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/ula32.vhd
-Z50 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/ula32.vhd
+Z45 8C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/ula32.vhd
+Z46 FC:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/ula32.vhd
 l0
 L63 1
 VM1`EhBco;Cb9<:6CC>b?e2
 !s100 bGmbVJaTC>R`I<lBgn7@L3
 R7
 32
-R44
+Z47 !s110 1778907214
 !i10b 1
-R48
-Z51 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/ula32.vhd|
-!s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/ula32.vhd|
+Z48 !s108 1778907214.000000
+Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/ula32.vhd|
+Z50 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/ula32.vhd|
 !i113 1
 R12
 R13
@@ -723,19 +723,19 @@ Abehavioral
 R1
 R2
 R3
-Z52 DEx4 work 5 ula32 0 22 M1`EhBco;Cb9<:6CC>b?e2
-!i122 445
+Z51 DEx4 work 5 ula32 0 22 M1`EhBco;Cb9<:6CC>b?e2
+!i122 470
 l89
-Z53 L79 138
-Z54 VF94M;2UJ^55hCen3Z[Kfk0
-Z55 !s100 1E>E2KjDKb=5dkES8U2ha0
+Z52 L79 138
+Z53 VF94M;2UJ^55hCen3Z[Kfk0
+Z54 !s100 1E>E2KjDKb=5dkES8U2ha0
 R7
 32
-R44
+R47
 !i10b 1
 R48
-R51
-Z56 !s107 C:/Users/felip/OneDrive/Documents/faculdade/infra hard/2026.1/trabalho-de-infra-hardware/ula32.vhd|
+R49
+R50
 !i113 1
 R12
 R13
