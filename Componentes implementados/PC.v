@@ -40,7 +40,7 @@ module PC (
         .Clk(clk), 
         .Reset(reset), 
         .Shift(shift_control), 
-        .N({3'b000, shift_n_control_out}),
+        .N(shift_n_control_out),
         .Entrada(shift_input_control_out), 
         .Saida(reg_deslo_out)
     );
@@ -325,7 +325,7 @@ module PC (
     );
 
     // ===== DIVISOR (Verilog) =====
-    Div division (
+    div division (
         .clk(clk), 
         .reset(reset), 
         .div_start(div_start), 
