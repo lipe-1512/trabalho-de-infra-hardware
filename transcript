@@ -313,3 +313,182 @@ run -continue
 # GetModuleFileName: Não foi possível encontrar o módulo especificado.
 # 
 # 
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of ula32.vhd was successful.
+# Compile of control_of_data.v was successful.
+# Compile of control_Unit.v was successful.
+# Compile of div.v was successful.
+# Compile of mux_ALUSrcA.v was successful.
+# Compile of mux_ALUSrcB.v was successful.
+# Compile of mux_DataSrc.v was successful.
+# Compile of mux_div_mult.v was successful.
+# Compile of mux_IorD.v was successful.
+# Compile of mux_memory_reg.v was successful.
+# Compile of mux_PCSource.v was successful.
+# Compile of mux_RegDst.v was successful.
+# Compile of mux_shift_control.v was successful.
+# Compile of mux_ShiftAmt.v was successful.
+# Compile of mux_ShiftSrc.v was successful.
+# Compile of PC.v was successful.
+# Compile of S_1_to_32.v was successful.
+# Compile of S8_to_32.v was successful.
+# Compile of S16_to_32.v was successful.
+# Compile of SL_32_to_32.v was successful.
+# 25 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PC
+# Loading work.control_of_data
+# Loading work.mux_PCSource
+# Loading work.mux_div_mult
+# Loading work.mux_IorD
+# Loading work.mux_RegDst
+# Loading work.mux_ALUSrcA
+# Loading work.mux_ALUSrcB
+# Loading work.mux_memory_reg
+# Loading work.mux_DataSrc
+# Loading work.mux_shift_control
+# Loading work.mux_ShiftAmt
+# Loading work.S_16_to_32
+# Loading work.S_1_to_32
+# Loading work.SL_32_to_32
+# Loading work.div
+# Loading work.control_Unit
+# Loading work.regdesloc(behavioral_arch)
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# Loading work.registrador(behavioral_arch)
+force -freeze sim:/PC/clk 1 0, 0 {50 ps} -r 100
+run -continue
+# GetModuleFileName: Não foi possível encontrar o módulo especificado.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /PC/BR
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /PC/BR
+# ** Warning: (vsim-7) Failed to open VHDL file "lipe-1512-trabalho-de-infra-hardware/Componentes do Projeto/instrucoes.mif" in rb mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_Three
+# ** Fatal: (vsim-7) Failed to open VHDL file "lipe-1512-trabalho-de-infra-hardware/Componentes do Projeto/instrucoes.mif" in rb mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Process: /PC/mem/MEM_plus_Three/MEMORY File: C:/intelFPGA/20.1/modelsim_ase/win32aloem/../altera/vhdl/src/220model/220model.vhd
+# Fatal error in Process MEMORY at C:/intelFPGA/20.1/modelsim_ase/win32aloem/../altera/vhdl/src/220model/220model.vhd line 4360
+# 
+# HDL call sequence:
+# Stopped at C:/intelFPGA/20.1/modelsim_ase/win32aloem/../altera/vhdl/src/220model/220model.vhd 4360 Process MEMORY
+# 
+# Compile of Banco_reg.vhd was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of ula32.vhd was successful.
+# Compile of control_of_data.v was successful.
+# Compile of control_Unit.v was successful.
+# Compile of div.v was successful.
+# Compile of mux_ALUSrcA.v was successful.
+# Compile of mux_ALUSrcB.v was successful.
+# Compile of mux_DataSrc.v was successful.
+# Compile of mux_div_mult.v was successful.
+# Compile of mux_IorD.v was successful.
+# Compile of mux_memory_reg.v was successful.
+# Compile of mux_PCSource.v was successful.
+# Compile of mux_RegDst.v was successful.
+# Compile of mux_shift_control.v was successful.
+# Compile of mux_ShiftAmt.v was successful.
+# Compile of mux_ShiftSrc.v was successful.
+# Compile of PC.v was successful.
+# Compile of S_1_to_32.v was successful.
+# Compile of S8_to_32.v was successful.
+# Compile of S16_to_32.v was successful.
+# Compile of SL_32_to_32.v was successful.
+# 25 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.PC
+# Loading work.control_of_data
+# Loading work.mux_PCSource
+# Loading work.mux_div_mult
+# Loading work.mux_IorD
+# Loading work.mux_RegDst
+# Loading work.mux_ALUSrcA
+# Loading work.mux_ALUSrcB
+# Loading work.mux_memory_reg
+# Loading work.mux_DataSrc
+# Loading work.mux_shift_control
+# Loading work.mux_ShiftAmt
+# Loading work.S_16_to_32
+# Loading work.S_1_to_32
+# Loading work.SL_32_to_32
+# Loading work.div
+# Loading work.control_Unit
+# Loading work.regdesloc(behavioral_arch)
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# Loading work.registrador(behavioral_arch)
+force -freeze sim:/PC/clk 1 0, 0 {50 ps} -r 100
+run -continue
+# GetModuleFileName: Não foi possível encontrar o módulo especificado.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /PC/BR
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /PC/BR
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /PC/mem
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /PC/mem
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /PC/mem
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /PC/mem
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /PC/mem
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /PC/mem
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /PC/mem
